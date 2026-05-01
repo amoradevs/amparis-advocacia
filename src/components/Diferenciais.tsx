@@ -1,48 +1,35 @@
-import {
-  Trophy,
-  UserCheck,
-  Lock,
-  Eye,
-  FileSearch,
-  Laptop,
-} from 'lucide-react';
+import { Trophy, UserCheck, Lock, Eye, FileSearch, Laptop } from 'lucide-react';
 
 const items = [
   {
     Icon: Trophy,
-    title: 'Honorários Apenas no Êxito',
-    desc: 'Você só paga quando receber o seu benefício. Se não houver resultado, não há cobrança. Simples assim.',
-    highlight: 'Sem resultado = sem cobrança',
+    title: 'Você só paga quando receber',
+    desc: 'Nossos honorários são de 30% — cobrados apenas no êxito. Se não houver resultado, não há cobrança nenhuma. Sem risco para você.',
   },
   {
     Icon: UserCheck,
-    title: 'Atendimento Humano, Sem Robôs',
-    desc: 'Nada mais frustrante do que respostas automáticas. Aqui você sempre será atendido por um membro da equipe, jamais por um robô.',
-    highlight: 'Sempre uma pessoa real',
+    title: 'Sempre um ser humano te atende',
+    desc: 'Aqui você nunca fala com robô ou mensagem automática. Sempre um membro da equipe, com atenção real ao seu caso.',
   },
   {
     Icon: Lock,
-    title: 'Sigilo e Privacidade Total',
-    desc: 'Seus dados estão protegidos. Você não receberá spam, ligações indesejadas ou compartilhamento de informações.',
-    highlight: 'Seus dados protegidos',
+    title: 'Sigilo e privacidade total',
+    desc: 'Seus dados ficam protegidos. Não há spam, ligações indesejadas ou compartilhamento de informações com terceiros.',
   },
   {
     Icon: Eye,
-    title: 'Você no Controle',
-    desc: 'Você é informado e decide. Nunca será pressionado a aceitar ou rejeitar um acordo sem a orientação mais completa possível.',
-    highlight: 'Você decide sempre',
+    title: 'Você está no controle',
+    desc: 'Você é orientado e decide. Nunca será pressionado a aceitar ou rejeitar um acordo — somos parceiros, não donos da sua decisão.',
   },
   {
     Icon: FileSearch,
-    title: 'Transparência no Processo',
-    desc: 'Quando seu processo é distribuído, enviamos o número e o link para você acompanhar os andamentos quando quiser.',
-    highlight: 'Acompanhe em tempo real',
+    title: 'Acompanhe seu processo',
+    desc: 'Quando seu processo é distribuído, enviamos o número e o link para acompanhar os andamentos quando e onde quiser.',
   },
   {
     Icon: Laptop,
-    title: 'Online para Todo o Brasil',
-    desc: 'Todo nosso atendimento é digital. Você não precisa sair de casa para nos contratar. Mas se preferir, temos sede própria.',
-    highlight: 'De onde você estiver',
+    title: 'Online para todo o Brasil',
+    desc: 'Atendimento 100% digital, sem precisar sair de casa. Se preferir presencialmente, temos sede própria em São Paulo.',
   },
 ];
 
@@ -51,65 +38,87 @@ export default function Diferenciais() {
     <section
       id="diferenciais"
       className="py-24"
-      style={{ background: 'linear-gradient(180deg, #0b1c2c 0%, #0f2540 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #1c2d4a 0%, #13213a 100%)' }}
     >
       <div className="max-w-6xl mx-auto px-5">
-        {/* Header */}
         <div className="text-center mb-14">
           <p
-            className="text-[#c5a059] text-xs tracking-[0.4em] uppercase font-semibold mb-3"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            className="font-semibold mb-3"
+            style={{
+              color: '#b89450',
+              fontFamily: 'Montserrat, sans-serif',
+              fontSize: '0.8rem',
+              letterSpacing: '0.35em',
+              textTransform: 'uppercase',
+            }}
           >
             Por que nos escolher
           </p>
           <h2
-            className="text-white mb-4"
-            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600 }}
+            style={{
+              fontFamily: 'Cormorant Garamond, serif',
+              fontSize: 'clamp(2rem, 4vw, 3rem)',
+              color: 'white',
+            }}
           >
-            O Nosso <span className="italic text-[#c5a059]">Diferencial</span>
+            Nosso{' '}
+            <span style={{ color: '#b89450', fontStyle: 'italic' }}>Diferencial</span>
           </h2>
-          <div className="w-12 h-0.5 bg-[#c5a059] mx-auto mb-5" />
+
+          {/* Subtítulo amplo e legível */}
           <p
-            className="text-white/50 max-w-xl mx-auto text-sm leading-relaxed"
-            style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}
+            className="max-w-xl mx-auto mt-4"
+            style={{
+              fontFamily: 'Montserrat, sans-serif',
+              fontSize: '1rem',
+              color: 'rgba(255,255,255,0.55)',
+              fontWeight: 300,
+              lineHeight: 1.75,
+            }}
           >
-            A Amparis Advocacia nasceu com um propósito claro: humanizar o Direito Previdenciário
-            com um atendimento que realmente ampara.
+            A Amparis nasceu para humanizar o Direito Previdenciário.
+            Cada compromisso abaixo é um pilar que sustenta nosso atendimento.
           </p>
         </div>
 
-        {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {items.map(({ Icon, title, desc, highlight }) => (
+          {items.map(({ Icon, title, desc }) => (
             <div
               key={title}
-              className="bg-white/5 border border-white/10 rounded-lg p-7 hover:bg-white/8 hover:border-[#c5a059]/30 transition-all duration-300"
+              className="rounded-xl p-7 transition-all duration-300 hover:scale-[1.01]"
+              style={{
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.1)',
+              }}
             >
-              <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-lg bg-[#c5a059]/10 flex items-center justify-center flex-shrink-0">
-                  <Icon size={20} className="text-[#c5a059]" />
-                </div>
-                <div>
-                  <h3
-                    className="text-white mb-2"
-                    style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.2rem', fontWeight: 600 }}
-                  >
-                    {title}
-                  </h3>
-                  <p
-                    className="text-white/55 text-xs leading-relaxed mb-3"
-                    style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}
-                  >
-                    {desc}
-                  </p>
-                  <span
-                    className="inline-block bg-[#c5a059]/15 text-[#c5a059] text-xs px-2.5 py-1 rounded-full"
-                    style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 500 }}
-                  >
-                    {highlight}
-                  </span>
-                </div>
+              <div
+                className="w-12 h-12 rounded-lg flex items-center justify-center mb-5"
+                style={{ background: 'rgba(184,148,80,0.12)' }}
+              >
+                <Icon size={22} style={{ color: '#b89450' }} />
               </div>
+              <h3
+                className="mb-3"
+                style={{
+                  fontFamily: 'Cormorant Garamond, serif',
+                  fontSize: '1.3rem',
+                  color: 'white',
+                  fontWeight: 600,
+                }}
+              >
+                {title}
+              </h3>
+              <p
+                style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontSize: '0.9375rem',
+                  color: 'rgba(255,255,255,0.55)',
+                  fontWeight: 300,
+                  lineHeight: 1.75,
+                }}
+              >
+                {desc}
+              </p>
             </div>
           ))}
         </div>

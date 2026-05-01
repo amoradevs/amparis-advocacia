@@ -6,54 +6,64 @@ const WA_URL =
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#060f1a' }}>
-      <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, transparent, #c5a059, transparent)', opacity: 0.4 }} />
+    <footer style={{ background: '#0d1a2d' }}>
+      <div
+        className="h-px w-full"
+        style={{ background: 'linear-gradient(90deg, transparent, #b89450, transparent)', opacity: 0.4 }}
+      />
 
       <div className="max-w-6xl mx-auto px-5 py-14">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
-          {/* Brand */}
+
+          {/* Marca */}
           <div>
             <Image
               src="/Fundo_escuro.jpg"
               alt="Amparis Advocacia"
               width={130}
               height={60}
-              className="object-contain mb-4"
+              className="object-contain mb-5"
             />
             <p
-              className="text-white/40 text-xs leading-relaxed mb-5 max-w-xs"
-              style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}
+              className="mb-5"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.4)', fontWeight: 300, lineHeight: 1.7 }}
             >
               Especialistas em BPC e Aposentadoria. Atendimento humanizado,
-              honorários apenas no êxito, para todo o Brasil.
+              honorários apenas no êxito. Online para todo o Brasil.
             </p>
             <a
               href={WA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366]/10 hover:bg-[#25D366] text-[#25D366] hover:text-white text-xs font-medium px-4 py-2 rounded border border-[#25D366]/30 transition-all"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
+              className="inline-flex items-center gap-2 font-medium text-sm transition-colors"
+              style={{ fontFamily: 'Montserrat, sans-serif', color: '#25D366', textDecoration: 'none' }}
             >
-              <MessageCircle size={13} />
-              Falar pelo WhatsApp
+              <MessageCircle size={14} />
+              WhatsApp
             </a>
           </div>
 
-          {/* Links */}
+          {/* Áreas */}
           <div>
             <p
-              className="text-[#c5a059] text-xs font-semibold tracking-[0.3em] uppercase mb-4"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
+              className="mb-4 font-semibold"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', color: '#b89450', letterSpacing: '0.3em', textTransform: 'uppercase' }}
             >
               Áreas de Atuação
             </p>
             <ul className="flex flex-col gap-2.5">
-              {['BPC / LOAS para Idosos', 'BPC para Pessoas com Deficiência', 'Aposentadoria por Idade', 'Aposentadoria por Invalidez', 'Recursos e Negativas do INSS'].map((item) => (
+              {[
+                'BPC para Idosos (65+)',
+                'BPC para Pessoas com Deficiência',
+                'Aposentadoria por Idade',
+                'Aposentadoria por Invalidez',
+                'Recursos e Negativas do INSS',
+              ].map((item) => (
                 <li key={item}>
                   <a
                     href="#atuacao"
-                    className="text-white/35 hover:text-[#c5a059] text-xs transition-colors"
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
+                    style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.35)', textDecoration: 'none' }}
+                    className="hover:text-white transition-colors"
                   >
                     {item}
                   </a>
@@ -62,34 +72,41 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contato */}
           <div>
             <p
-              className="text-[#c5a059] text-xs font-semibold tracking-[0.3em] uppercase mb-4"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
+              className="mb-4 font-semibold"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', color: '#b89450', letterSpacing: '0.3em', textTransform: 'uppercase' }}
             >
               Contato
             </p>
-            <div className="flex flex-col gap-3 text-white/35 text-xs" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <div
+              className="flex flex-col gap-3"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.65 }}
+            >
               <p>larissarocha@amparis.com.br</p>
               <p>(11) 99999-9999</p>
-              <p className="leading-relaxed">
-                Rua Barcelona, 340, B — Sala 05<br />
-                Jaguaré, São Paulo — SP<br />
-                CEP: 05331-011
-              </p>
+              <p>Rua Barcelona, 340, B — Sala 05<br />Jaguaré, São Paulo — SP<br />CEP: 05331-011</p>
               <p>Seg — Sex: 8h às 18h</p>
             </div>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/20 text-xs text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+        {/* Barra legal */}
+        <div
+          className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+          style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+        >
+          <p
+            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.8rem', color: 'rgba(255,255,255,0.2)', textAlign: 'center' }}
+          >
             © {new Date().getFullYear()} Amparis Advocacia · Dra. Larissa Rocha · Todos os direitos reservados
           </p>
-          <p className="text-white/15 text-xs text-center max-w-md leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-            Este site não é vinculado ao INSS ou qualquer órgão governamental. Serviços exclusivamente jurídicos privados.
+          <p
+            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.15)', textAlign: 'center', maxWidth: '360px', lineHeight: 1.5 }}
+          >
+            Este site não é vinculado ao INSS ou qualquer órgão governamental.
+            Serviços exclusivamente jurídicos privados.
           </p>
         </div>
       </div>

@@ -5,19 +5,26 @@ export default function About() {
     <section id="sobre" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-5">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left — Visual element instead of photo */}
-          <div className="relative">
-            {/* Decorative gold frame */}
-            <div className="absolute -top-4 -left-4 w-full h-full border border-[#c5a059]/30 rounded-lg" />
+
+          {/* Lado esquerdo — card visual sem foto */}
+          <div className="relative order-2 lg:order-1">
+            {/* Frame decorativo */}
+            <div
+              className="absolute -top-4 -left-4 w-full h-full rounded-2xl"
+              style={{ border: '1.5px solid rgba(184,148,80,0.25)' }}
+            />
 
             <div
-              className="relative rounded-lg overflow-hidden"
-              style={{ background: 'linear-gradient(135deg, #0b1c2c 0%, #162c45 100%)', minHeight: '400px' }}
+              className="relative rounded-2xl overflow-hidden"
+              style={{
+                background: 'linear-gradient(145deg, #1c2d4a 0%, #13213a 100%)',
+                minHeight: '440px',
+              }}
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-12 text-center">
-                {/* Scales of justice illustration */}
-                <div className="mb-8 opacity-20">
-                  <svg viewBox="0 0 120 140" className="w-32 h-32 text-[#c5a059]" fill="currentColor">
+              <div className="p-10 flex flex-col justify-between h-full gap-10">
+                {/* Balança SVG */}
+                <div className="flex justify-center opacity-15">
+                  <svg viewBox="0 0 120 140" className="w-28 h-28 text-white" fill="currentColor">
                     <rect x="57" y="5" width="6" height="110" rx="2" />
                     <rect x="22" y="18" width="76" height="5" rx="2" />
                     <circle cx="60" cy="16" r="8" />
@@ -31,30 +38,55 @@ export default function About() {
                   </svg>
                 </div>
 
-                <p
-                  className="text-[#c5a059] text-xs tracking-[0.4em] uppercase font-semibold mb-4"
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                {/* Citação */}
+                <blockquote
+                  className="text-center"
                 >
-                  Dra. Larissa Rocha
-                </p>
-                <p
-                  className="text-white italic text-xl font-light mb-6 leading-relaxed"
-                  style={{ fontFamily: 'Cormorant Garamond, serif' }}
-                >
-                  &ldquo;Cada caso que chega até mim traz uma história de luta.
-                  Meu compromisso é estar ao lado dessas pessoas até o fim.&rdquo;
-                </p>
-                <div className="w-8 h-px bg-[#c5a059]/50 mb-4" />
+                  <p
+                    className="text-white italic mb-4"
+                    style={{
+                      fontFamily: 'Cormorant Garamond, serif',
+                      fontSize: '1.25rem',
+                      fontWeight: 400,
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    &ldquo;Cada caso que chega até mim traz uma história de luta.
+                    Meu compromisso é estar ao lado dessas pessoas,
+                    com coragem e fé, até o fim.&rdquo;
+                  </p>
+                  <div className="w-8 h-0.5 mx-auto mb-3" style={{ background: '#b89450', opacity: 0.5 }} />
+                  <p
+                    style={{
+                      fontFamily: 'Montserrat, sans-serif',
+                      fontSize: '0.8rem',
+                      color: '#b89450',
+                      fontWeight: 600,
+                      letterSpacing: '0.05em',
+                    }}
+                  >
+                    DRA. LARISSA ROCHA
+                  </p>
+                </blockquote>
 
-                <div className="grid grid-cols-3 gap-6 w-full">
+                {/* Credenciais */}
+                <div
+                  className="grid grid-cols-2 gap-4 pt-6"
+                  style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
+                >
                   {[
-                    { label: 'Especialidade', value: 'BPC & APOSEN.' },
-                    { label: 'Atendimento', value: 'Todo Brasil' },
-                    { label: 'Início', value: '1ª Consulta Grátis' },
-                  ].map((stat) => (
-                    <div key={stat.label} className="text-center">
-                      <p className="text-[#c5a059] text-xs font-semibold mb-1" style={{ fontFamily: 'Montserrat, sans-serif' }}>{stat.value}</p>
-                      <p className="text-white/30 text-xs uppercase tracking-wider" style={{ fontFamily: 'Montserrat, sans-serif' }}>{stat.label}</p>
+                    { label: 'Experiência', value: '15 anos' },
+                    { label: 'Especialidade', value: 'BPC & Aposentadoria' },
+                    { label: 'Pós-Graduação', value: 'Mackenzie' },
+                    { label: 'Atendimento', value: 'Todo o Brasil' },
+                  ].map((c) => (
+                    <div key={c.label}>
+                      <p style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem', color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>
+                        {c.label}
+                      </p>
+                      <p style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.875rem', color: '#b89450', fontWeight: 500 }}>
+                        {c.value}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -62,67 +94,113 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right — Text */}
-          <div>
+          {/* Lado direito — texto */}
+          <div className="order-1 lg:order-2">
             <p
-              className="text-[#c5a059] text-xs tracking-[0.4em] uppercase font-semibold mb-3"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
+              className="font-semibold mb-3"
+              style={{
+                color: '#b89450',
+                fontFamily: 'Montserrat, sans-serif',
+                fontSize: '0.8rem',
+                letterSpacing: '0.35em',
+                textTransform: 'uppercase',
+              }}
             >
               Quem está ao seu lado
             </p>
+
             <h2
-              className="text-[#0b1c2c] mb-5"
-              style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.9rem, 4vw, 2.8rem)', fontWeight: 600 }}
+              className="mb-5"
+              style={{
+                fontFamily: 'Cormorant Garamond, serif',
+                fontSize: 'clamp(2rem, 4vw, 2.9rem)',
+                color: '#1c2d4a',
+                lineHeight: 1.15,
+              }}
             >
-              Dra. <span className="italic text-[#c5a059]">Larissa Rocha</span>
+              Dra.{' '}
+              <span style={{ color: '#b89450', fontStyle: 'italic' }}>Larissa Rocha</span>
               <br />
               Advogada Previdenciarista
             </h2>
 
-            <div className="w-10 h-0.5 bg-[#c5a059] mb-6" />
+            <div className="w-10 h-0.5 mb-7" style={{ background: '#b89450' }} />
 
+            {/* Bio fornecida pela cliente — texto integral */}
             <p
-              className="text-[#555] text-sm leading-relaxed mb-5"
-              style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}
+              className="mb-5"
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontSize: '1rem',
+                color: '#444',
+                fontWeight: 300,
+                lineHeight: 1.8,
+              }}
             >
-              A Amparis Advocacia nasceu com um propósito muito claro e inegociável:
-              humanizar o Direito Previdenciário por meio de um atendimento verdadeiramente acolhedor.
+              Larissa Rocha é Advogada Previdenciarista há{' '}
+              <strong style={{ fontWeight: 500, color: '#1c2d4a' }}>15 anos</strong>,
+              com Mestrado em Direito Político e Econômico, com ênfase em
+              Políticas Públicas Sociais —{' '}
+              <strong style={{ fontWeight: 500, color: '#1c2d4a' }}>MACKENZIE</strong>.
             </p>
             <p
-              className="text-[#555] text-sm leading-relaxed mb-5"
-              style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}
+              className="mb-8"
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontSize: '1rem',
+                color: '#444',
+                fontWeight: 300,
+                lineHeight: 1.8,
+              }}
             >
-              Sabemos que buscar o INSS é, muitas vezes, um processo desgastante, repleto de exigências
-              que deixam as pessoas perdidas. Por isso, nosso compromisso vai muito além da excelência técnica.
-            </p>
-            <p
-              className="text-[#555] text-sm leading-relaxed mb-8"
-              style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}
-            >
-              Nosso pilar é o <strong className="text-[#0b1c2c] font-medium">amparo</strong>. Analisamos a sua história com cuidado,
-              traçamos a rota mais segura e <strong className="text-[#0b1c2c] font-medium">não desistimos</strong> diante da primeira
-              barreira. Estaremos ao seu lado até o fim.
+              Sempre cheia de fé, com coragem e comprometida a ajudar seus
+              clientes da melhor forma possível.
             </p>
 
-            {/* Pillars */}
-            <div className="flex flex-col gap-4">
+            {/* Pilares */}
+            <div className="flex flex-col gap-5">
               {[
-                { Icon: Shield, label: 'Ética e Transparência', desc: 'Honorários claros, processo acompanhável, sem surpresas.' },
-                { Icon: Heart, label: 'Atendimento Humanizado', desc: 'Você é mais do que um processo — é uma história que merece atenção.' },
-                { Icon: Star, label: 'Comprometimento Total', desc: 'Do primeiro contato ao recebimento do benefício, estamos com você.' },
+                {
+                  Icon: Shield,
+                  label: 'Ética e Transparência',
+                  desc: 'Honorários claros, processo acompanhável, sem surpresas.',
+                },
+                {
+                  Icon: Heart,
+                  label: 'Atendimento Humanizado',
+                  desc: 'Você é mais do que um processo — é uma história que merece atenção.',
+                },
+                {
+                  Icon: Star,
+                  label: 'Comprometimento Total',
+                  desc: 'Do primeiro contato ao recebimento do benefício, a Dra. Larissa está com você.',
+                },
               ].map(({ Icon, label, desc }) => (
                 <div key={label} className="flex gap-4 items-start">
-                  <div className="w-9 h-9 rounded bg-[#fdf6ea] flex items-center justify-center flex-shrink-0">
-                    <Icon size={17} className="text-[#c5a059]" />
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{ background: '#fdf5e6' }}
+                  >
+                    <Icon size={18} style={{ color: '#b89450' }} />
                   </div>
                   <div>
-                    <p className="text-[#0b1c2c] font-medium text-sm mb-0.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>{label}</p>
-                    <p className="text-[#888] text-xs leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}>{desc}</p>
+                    <p
+                      className="font-medium mb-0.5"
+                      style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9375rem', color: '#1c2d4a' }}
+                    >
+                      {label}
+                    </p>
+                    <p
+                      style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.875rem', color: '#888', fontWeight: 300, lineHeight: 1.6 }}
+                    >
+                      {desc}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
+
         </div>
       </div>
     </section>

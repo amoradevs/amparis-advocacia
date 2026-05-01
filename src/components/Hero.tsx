@@ -7,142 +7,121 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
       style={{
-        background:
-          'linear-gradient(135deg, #060f1a 0%, #0b1c2c 55%, #162c45 100%)',
+        background: 'linear-gradient(150deg, #13213a 0%, #1c2d4a 60%, #243d5e 100%)',
       }}
     >
-      {/* Subtle diagonal pattern */}
+      {/* Gold line top */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute top-0 inset-x-0 h-1"
+        style={{ background: 'linear-gradient(90deg, transparent, #b89450, transparent)' }}
+      />
+
+      {/* Subtle diagonal texture */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: `repeating-linear-gradient(
-            -45deg,
-            #c5a059 0px,
-            #c5a059 1px,
-            transparent 1px,
-            transparent 70px
-          )`,
+          backgroundImage:
+            'repeating-linear-gradient(-45deg,#b89450 0,#b89450 1px,transparent 1px,transparent 60px)',
         }}
       />
 
-      {/* Gold top line */}
-      <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-[#c5a059] to-transparent opacity-70" />
-
-      {/* Decorative balance scale — SVG illustration */}
-      <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:flex items-center justify-center opacity-5 pointer-events-none select-none">
-        <svg viewBox="0 0 200 220" className="w-96 h-96 text-[#c5a059]" fill="currentColor">
-          <rect x="96" y="10" width="8" height="180" rx="2" />
-          <rect x="40" y="30" width="120" height="6" rx="3" />
-          <circle cx="100" cy="28" r="10" />
-          <ellipse cx="55" cy="80" rx="30" ry="8" />
-          <rect x="50" y="80" width="10" height="50" />
-          <rect x="30" y="128" width="50" height="6" rx="3" />
-          <ellipse cx="145" cy="80" rx="30" ry="8" />
-          <rect x="140" y="80" width="10" height="50" />
-          <rect x="120" y="128" width="50" height="6" rx="3" />
-          <rect x="80" y="190" width="40" height="8" rx="2" />
-        </svg>
-      </div>
-
-      <div className="relative z-10 max-w-6xl mx-auto px-5 pt-28 pb-16 lg:pt-36">
-        <div className="max-w-2xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-[#c5a059]/10 border border-[#c5a059]/30 rounded-full px-4 py-1.5 mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#c5a059] animate-pulse" />
-            <span
-              className="text-[#c5a059] text-xs tracking-widest uppercase"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
-            >
-              Especialistas em BPC e Aposentadoria
-            </span>
-          </div>
-
-          {/* Headline */}
-          <h1
-            className="text-white mb-6"
-            style={{
-              fontFamily: 'Cormorant Garamond, Georgia, serif',
-              fontSize: 'clamp(2.6rem, 6vw, 4.5rem)',
-              fontWeight: 600,
-              lineHeight: 1.1,
-            }}
+      {/* Content */}
+      <div className="relative z-10 max-w-6xl mx-auto px-5 pt-32 pb-20 w-full">
+        {/* Pill badge */}
+        <div
+          className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-8"
+          style={{ background: 'rgba(184,148,80,0.12)', border: '1px solid rgba(184,148,80,0.3)' }}
+        >
+          <span
+            className="w-2 h-2 rounded-full animate-pulse"
+            style={{ background: '#b89450' }}
+          />
+          <span
+            className="text-sm font-medium"
+            style={{ color: '#b89450', fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.04em' }}
           >
-            Amparo e Segurança
-            <br />
-            para a sua{' '}
-            <span className="text-[#c5a059] italic">Aposentadoria</span>
-            <br />e <span className="text-[#c5a059] italic">BPC.</span>
-          </h1>
+            Especialistas em BPC e Aposentadoria
+          </span>
+        </div>
 
-          {/* Subheadline */}
-          <p
-            className="text-white/70 mb-10 leading-relaxed"
-            style={{
-              fontFamily: 'Montserrat, sans-serif',
-              fontWeight: 300,
-              fontSize: 'clamp(0.95rem, 2vw, 1.1rem)',
-            }}
-          >
-            Mais do que excelência jurídica, oferecemos um atendimento cuidadoso
-            para amparar suas necessidades.{' '}
-            <strong className="text-white/90 font-medium">
-              Nós não desistimos do seu direito.
-            </strong>
-          </p>
+        {/* Headline — tamanho generoso para leitura fácil */}
+        <h1
+          className="text-white mb-6 max-w-3xl"
+          style={{
+            fontFamily: 'Cormorant Garamond, Georgia, serif',
+            fontSize: 'clamp(2.8rem, 6vw, 5rem)',
+            fontWeight: 600,
+            lineHeight: 1.1,
+          }}
+        >
+          Amparo e Segurança
+          <br />
+          para a sua{' '}
+          <span style={{ color: '#b89450', fontStyle: 'italic' }}>Aposentadoria</span>
+          {' '}e{' '}
+          <span style={{ color: '#b89450', fontStyle: 'italic' }}>BPC.</span>
+        </h1>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 mb-14">
-            <a
-              href={WA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1ebe5c] text-white font-semibold px-7 py-4 rounded transition-all hover:-translate-y-0.5 hover:shadow-lg"
-              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', letterSpacing: '0.05em' }}
-            >
-              <MessageCircle size={18} />
-              Falar pelo WhatsApp
-            </a>
-            <a
-              href="#contato"
-              className="inline-flex items-center justify-center gap-2.5 border border-[#c5a059] text-[#c5a059] hover:bg-[#c5a059] hover:text-[#0b1c2c] font-semibold px-7 py-4 rounded transition-all"
-              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', letterSpacing: '0.05em' }}
-            >
-              Análise Gratuita do Caso
-            </a>
-          </div>
+        {/* Subtitle — fonte mínima 17px */}
+        <p
+          className="text-white/70 mb-10 max-w-xl"
+          style={{
+            fontFamily: 'Montserrat, sans-serif',
+            fontSize: '1.0625rem',
+            fontWeight: 300,
+            lineHeight: 1.8,
+          }}
+        >
+          Mais do que excelência jurídica, um atendimento cuidadoso
+          para amparar você em cada etapa.{' '}
+          <strong className="text-white font-medium">Nós não desistimos do seu direito.</strong>
+        </p>
 
-          {/* Trust badges */}
-          <div className="flex flex-wrap gap-5">
-            {[
-              'Honorários apenas no êxito',
-              'Consulta 100% gratuita',
-              'Atendimento online em todo Brasil',
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-[#c5a059] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                <span
-                  className="text-white/60 text-xs"
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}
-                >
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
+        {/* CTAs — primário WhatsApp, secundário formulário */}
+        <div className="flex flex-col sm:flex-row gap-4 mb-16">
+          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-wa">
+            <MessageCircle size={20} />
+            Falar agora pelo WhatsApp
+          </a>
+          <a href="#contato" className="btn-outline-gold">
+            Análise Gratuita do Meu Caso
+          </a>
+        </div>
+
+        {/* Trust bar */}
+        <div
+          className="inline-flex flex-wrap gap-x-8 gap-y-3 pt-6"
+          style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}
+        >
+          {[
+            { icon: '✓', text: 'Honorários só quando você receber' },
+            { icon: '✓', text: '15 anos de experiência' },
+            { icon: '✓', text: 'Atendimento online para todo Brasil' },
+            { icon: '✓', text: 'Consulta inicial gratuita' },
+          ].map(({ icon, text }) => (
+            <div key={text} className="flex items-center gap-2">
+              <span style={{ color: '#b89450', fontWeight: 700 }}>{icon}</span>
+              <span
+                className="text-white/55"
+                style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.875rem' }}
+              >
+                {text}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll cue */}
       <a
         href="#atuacao"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/30 hover:text-[#c5a059] transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 hover:opacity-70 transition-opacity"
+        style={{ color: 'rgba(255,255,255,0.25)' }}
+        aria-label="Ver conteúdo"
       >
-        <span className="text-xs tracking-widest uppercase" style={{ fontFamily: 'Montserrat, sans-serif' }}>Ver mais</span>
-        <ChevronDown size={18} className="animate-bounce" />
+        <ChevronDown size={20} className="animate-bounce" />
       </a>
     </section>
   );
