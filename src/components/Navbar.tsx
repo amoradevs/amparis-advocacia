@@ -62,9 +62,20 @@ export default function Navbar() {
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-wa !py-2.5 !px-5 !text-sm"
+            className="flex items-center gap-2 transition-colors"
+            style={{
+              fontFamily: 'Montserrat, sans-serif',
+              fontSize: '0.8rem',
+              fontWeight: 600,
+              color: '#25D366',
+              letterSpacing: '0.04em',
+              textDecoration: 'none',
+              border: '1px solid rgba(37,211,102,0.35)',
+              padding: '7px 14px',
+              borderRadius: '4px',
+            }}
           >
-            <MessageCircle size={16} />
+            <MessageCircle size={14} />
             WhatsApp
           </a>
         </nav>
