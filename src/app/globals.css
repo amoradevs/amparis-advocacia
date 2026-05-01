@@ -1,113 +1,43 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #1a2744;
-  --navy-dark: #111b33;
-  --navy-light: #243258;
-  --gold: #b8964a;
-  --gold-light: #cead6a;
-  --gold-pale: #f5edd8;
-  --off-white: #f8f5ef;
-  --text-dark: #1a1a1a;
-  --text-muted: #6b7280;
+  --navy: #0b1c2c;
+  --navy-light: #162c45;
+  --gold: #c5a059;
+  --gold-hover: #e0bb71;
+  --gold-pale: #fdf6ea;
+  --bg: #fdfdfd;
+  --text: #333333;
+  --text-light: #666666;
+  --whatsapp: #25D366;
 }
 
 @theme inline {
   --color-navy: var(--navy);
-  --color-navy-dark: var(--navy-dark);
   --color-navy-light: var(--navy-light);
   --color-gold: var(--gold);
-  --color-gold-light: var(--gold-light);
+  --color-gold-hover: var(--gold-hover);
   --color-gold-pale: var(--gold-pale);
-  --color-off-white: var(--off-white);
 }
 
 * {
+  box-sizing: border-box;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
 body {
-  background: #ffffff;
-  color: var(--text-dark);
+  background: var(--bg);
+  color: var(--text);
   font-family: 'Montserrat', system-ui, sans-serif;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4 {
   font-family: 'Cormorant Garamond', 'Georgia', serif;
-}
-
-.section-divider {
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--gold), var(--gold-light));
-  display: block;
-}
-
-.gold-text {
-  color: var(--gold);
-}
-
-.navy-text {
   color: var(--navy);
-}
-
-.btn-primary {
-  background: var(--gold);
-  color: white;
-  padding: 14px 36px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  border: 2px solid var(--gold);
-  transition: all 0.3s ease;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  background: transparent;
-  color: var(--gold);
-}
-
-.btn-outline {
-  background: transparent;
-  color: white;
-  padding: 14px 36px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  border: 2px solid white;
-  transition: all 0.3s ease;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.btn-outline:hover {
-  background: white;
-  color: var(--navy);
-}
-
-.btn-outline-gold {
-  background: transparent;
-  color: var(--gold);
-  padding: 14px 36px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  border: 2px solid var(--gold);
-  transition: all 0.3s ease;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.btn-outline-gold:hover {
-  background: var(--gold);
-  color: white;
+  line-height: 1.2;
 }

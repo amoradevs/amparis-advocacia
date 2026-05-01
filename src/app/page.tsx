@@ -1,10 +1,13 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import PracticeAreas from "@/components/PracticeAreas";
-import Team from "@/components/Team";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import Problem from '@/components/Problem';
+import Services from '@/components/Services';
+import Diferenciais from '@/components/Diferenciais';
+import HowItWorks from '@/components/HowItWorks';
+import About from '@/components/About';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
+import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 export default function Home() {
   return (
@@ -12,12 +15,15 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Problem />
+        <Services />
+        <Diferenciais />
+        <HowItWorks />
         <About />
-        <PracticeAreas />
-        <Team />
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </>
   );
 }

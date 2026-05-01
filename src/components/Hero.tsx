@@ -1,108 +1,149 @@
+import { MessageCircle, ChevronDown } from 'lucide-react';
+
+const WA_URL =
+  'https://wa.me/5511999999999?text=Olá!%20Vim%20pelo%20site%20da%20Amparis%20Advocacia%20e%20gostaria%20de%20uma%20análise%20gratuita%20do%20meu%20caso.';
+
 export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #111b33 0%, #1a2744 50%, #243258 100%)' }}
+      className="relative min-h-screen flex items-center overflow-hidden"
+      style={{
+        background:
+          'linear-gradient(135deg, #060f1a 0%, #0b1c2c 55%, #162c45 100%)',
+      }}
     >
-      {/* Background pattern */}
+      {/* Subtle diagonal pattern */}
       <div
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage: `repeating-linear-gradient(
-            45deg,
-            #b8964a 0px,
-            #b8964a 1px,
+            -45deg,
+            #c5a059 0px,
+            #c5a059 1px,
             transparent 1px,
-            transparent 60px
+            transparent 70px
           )`,
         }}
       />
 
-      {/* Decorative gold lines */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#b8964a] to-transparent opacity-60" />
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#b8964a] to-transparent opacity-60" />
-      <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-transparent via-[#b8964a] to-transparent opacity-30" />
-      <div className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-transparent via-[#b8964a] to-transparent opacity-30" />
+      {/* Gold top line */}
+      <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-[#c5a059] to-transparent opacity-70" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        {/* Gold ornament */}
-        <div className="flex items-center justify-center gap-4 mb-10">
-          <div className="h-px w-16 bg-gradient-to-r from-transparent to-[#b8964a]" />
-          <span className="text-[#b8964a] text-xs tracking-[0.4em] uppercase font-medium">
-            Excelência em Advocacia
-          </span>
-          <div className="h-px w-16 bg-gradient-to-l from-transparent to-[#b8964a]" />
-        </div>
+      {/* Decorative balance scale — SVG illustration */}
+      <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:flex items-center justify-center opacity-5 pointer-events-none select-none">
+        <svg viewBox="0 0 200 220" className="w-96 h-96 text-[#c5a059]" fill="currentColor">
+          <rect x="96" y="10" width="8" height="180" rx="2" />
+          <rect x="40" y="30" width="120" height="6" rx="3" />
+          <circle cx="100" cy="28" r="10" />
+          <ellipse cx="55" cy="80" rx="30" ry="8" />
+          <rect x="50" y="80" width="10" height="50" />
+          <rect x="30" y="128" width="50" height="6" rx="3" />
+          <ellipse cx="145" cy="80" rx="30" ry="8" />
+          <rect x="140" y="80" width="10" height="50" />
+          <rect x="120" y="128" width="50" height="6" rx="3" />
+          <rect x="80" y="190" width="40" height="8" rx="2" />
+        </svg>
+      </div>
 
-        <h1
-          className="text-white font-light mb-6 leading-tight"
-          style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
-            fontSize: 'clamp(2.8rem, 7vw, 5.5rem)',
-            letterSpacing: '0.02em',
-          }}
-        >
-          Defendemos o que
-          <br />
-          <span className="text-[#b8964a] italic">mais importa</span>
-          <br />
-          para você
-        </h1>
+      <div className="relative z-10 max-w-6xl mx-auto px-5 pt-28 pb-16 lg:pt-36">
+        <div className="max-w-2xl">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-[#c5a059]/10 border border-[#c5a059]/30 rounded-full px-4 py-1.5 mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#c5a059] animate-pulse" />
+            <span
+              className="text-[#c5a059] text-xs tracking-widest uppercase"
+              style={{ fontFamily: 'Montserrat, sans-serif' }}
+            >
+              Especialistas em BPC e Aposentadoria
+            </span>
+          </div>
 
-        <p
-          className="text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed"
-          style={{
-            fontFamily: "'Montserrat', sans-serif",
-            fontSize: 'clamp(0.9rem, 2vw, 1.05rem)',
-            fontWeight: 300,
-            letterSpacing: '0.03em',
-          }}
-        >
-          Assessoria jurídica estratégica com compromisso, ética e resultados.
-          Há mais de uma década protegendo os direitos de nossos clientes
-          com dedicação e excelência.
-        </p>
+          {/* Headline */}
+          <h1
+            className="text-white mb-6"
+            style={{
+              fontFamily: 'Cormorant Garamond, Georgia, serif',
+              fontSize: 'clamp(2.6rem, 6vw, 4.5rem)',
+              fontWeight: 600,
+              lineHeight: 1.1,
+            }}
+          >
+            Amparo e Segurança
+            <br />
+            para a sua{' '}
+            <span className="text-[#c5a059] italic">Aposentadoria</span>
+            <br />e <span className="text-[#c5a059] italic">BPC.</span>
+          </h1>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href="#contato" className="btn-primary">
-            Agende uma Consulta
-          </a>
-          <a href="#areas" className="btn-outline">
-            Nossas Áreas
-          </a>
-        </div>
+          {/* Subheadline */}
+          <p
+            className="text-white/70 mb-10 leading-relaxed"
+            style={{
+              fontFamily: 'Montserrat, sans-serif',
+              fontWeight: 300,
+              fontSize: 'clamp(0.95rem, 2vw, 1.1rem)',
+            }}
+          >
+            Mais do que excelência jurídica, oferecemos um atendimento cuidadoso
+            para amparar suas necessidades.{' '}
+            <strong className="text-white/90 font-medium">
+              Nós não desistimos do seu direito.
+            </strong>
+          </p>
 
-        {/* Stats */}
-        <div className="mt-20 grid grid-cols-3 gap-8 border-t border-white/10 pt-10">
-          {[
-            { number: '+500', label: 'Casos Resolvidos' },
-            { number: '+10', label: 'Anos de Experiência' },
-            { number: '98%', label: 'Clientes Satisfeitos' },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p
-                className="text-[#b8964a] font-light mb-1"
-                style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: 'clamp(2rem, 4vw, 3rem)',
-                }}
-              >
-                {stat.number}
-              </p>
-              <p className="text-white/50 text-xs tracking-widest uppercase">
-                {stat.label}
-              </p>
-            </div>
-          ))}
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-3 mb-14">
+            <a
+              href={WA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1ebe5c] text-white font-semibold px-7 py-4 rounded transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', letterSpacing: '0.05em' }}
+            >
+              <MessageCircle size={18} />
+              Falar pelo WhatsApp
+            </a>
+            <a
+              href="#contato"
+              className="inline-flex items-center justify-center gap-2.5 border border-[#c5a059] text-[#c5a059] hover:bg-[#c5a059] hover:text-[#0b1c2c] font-semibold px-7 py-4 rounded transition-all"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', letterSpacing: '0.05em' }}
+            >
+              Análise Gratuita do Caso
+            </a>
+          </div>
+
+          {/* Trust badges */}
+          <div className="flex flex-wrap gap-5">
+            {[
+              'Honorários apenas no êxito',
+              'Consulta 100% gratuita',
+              'Atendimento online em todo Brasil',
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-[#c5a059] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span
+                  className="text-white/60 text-xs"
+                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                >
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-        <span className="text-white/30 text-xs tracking-widest uppercase">Rolar</span>
-        <div className="w-px h-8 bg-gradient-to-b from-[#b8964a] to-transparent" />
-      </div>
+      <a
+        href="#atuacao"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/30 hover:text-[#c5a059] transition-colors"
+      >
+        <span className="text-xs tracking-widest uppercase" style={{ fontFamily: 'Montserrat, sans-serif' }}>Ver mais</span>
+        <ChevronDown size={18} className="animate-bounce" />
+      </a>
     </section>
   );
 }

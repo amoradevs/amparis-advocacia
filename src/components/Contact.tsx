@@ -1,245 +1,315 @@
 'use client';
 
 import { useState } from 'react';
+import { MessageCircle, Mail, MapPin, Clock } from 'lucide-react';
 
-const areas = [
-  'Direito Civil',
-  'Direito Trabalhista',
-  'Direito Previdenciário',
-  'Direito Empresarial',
-  'Direito do Consumidor',
-  'Direito Imobiliário',
-  'Outra área',
-];
+const WA_URL =
+  'https://wa.me/5511999999999?text=Olá!%20Vim%20pelo%20site%20da%20Amparis%20Advocacia%20e%20gostaria%20de%20uma%20análise%20gratuita%20do%20meu%20caso.';
 
 export default function Contact() {
-  const [form, setForm] = useState({ nome: '', email: '', telefone: '', area: '', mensagem: '' });
-  const [sent, setSent] = useState(false);
+  const [form, setForm] = useState({
+    nome: '',
+    telefone: '',
+    assunto: '',
+    mensagem: '',
+  });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setStatus('loading');
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/larissarocha@amparis.com.br', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          nome: form.nome,
+          telefone: form.telefone,
+          assunto: form.assunto,
+          mensagem: form.mensagem,
+          _subject: `Novo contato pelo site: ${form.assunto}`,
+          _replyto: '',
+        }),
+      });
+      if (res.ok) {
+        setStatus('success');
+        setForm({ nome: '', telefone: '', assunto: '', mensagem: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
-    <section
-      id="contato"
-      className="py-28"
-      style={{ background: 'linear-gradient(180deg, #f8f5ef 0%, #f0ebe0 100%)' }}
-    >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left — Info */}
-          <div>
-            <p className="text-[#b8964a] text-xs tracking-[0.4em] uppercase font-medium mb-4">
-              Entre em Contato
-            </p>
-            <h2
-              className="text-[#1a2744] font-light leading-tight mb-6"
-              style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
-                fontSize: 'clamp(2.2rem, 4vw, 3.2rem)',
-              }}
-            >
-              Agende sua
-              <br />
-              <span className="text-[#b8964a] italic">consulta</span> gratuita
-            </h2>
+    <section id="contato" className="py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-5">
+        {/* Header */}
+        <div className="text-center mb-14">
+          <p
+            className="text-[#c5a059] text-xs tracking-[0.4em] uppercase font-semibold mb-3"
+            style={{ fontFamily: 'Montserrat, sans-serif' }}
+          >
+            Estamos prontos para ouvir você
+          </p>
+          <h2
+            className="text-[#0b1c2c] mb-4"
+            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600 }}
+          >
+            Fale <span className="italic text-[#c5a059]">Conosco</span>
+          </h2>
+          <div className="w-12 h-0.5 bg-[#c5a059] mx-auto" />
+        </div>
 
-            <span className="section-divider mb-8" />
-
+        <div className="grid lg:grid-cols-5 gap-12">
+          {/* Left col — info */}
+          <div className="lg:col-span-2 flex flex-col gap-7">
             <p
-              className="text-gray-600 text-sm leading-relaxed mb-10"
+              className="text-[#555] text-sm leading-relaxed"
               style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}
             >
-              Nossa primeira consulta é gratuita e confidencial. Conte-nos sua situação
-              e um de nossos especialistas entrará em contato para orientá-lo sobre os
-              melhores caminhos jurídicos.
+              Preencha o formulário para uma análise gratuita, ou utilize nosso
+              WhatsApp para uma resposta mais rápida.
             </p>
 
-            {/* Contact details */}
-            <div className="flex flex-col gap-6">
+            {/* Info items */}
+            <div className="flex flex-col gap-5">
               {[
                 {
-                  icon: '📍',
-                  label: 'Endereço',
-                  value: 'Av. Paulista, 1000 — Sala 1010\nBela Vista, São Paulo — SP',
+                  Icon: MessageCircle,
+                  label: 'WhatsApp',
+                  value: '(11) 99999-9999',
+                  sub: 'Resposta rápida',
+                  href: WA_URL,
                 },
                 {
-                  icon: '📞',
-                  label: 'Telefone',
-                  value: '(11) 3000-0000',
-                },
-                {
-                  icon: '✉',
+                  Icon: Mail,
                   label: 'E-mail',
-                  value: 'contato@amparisadvocacia.com.br',
+                  value: 'larissarocha@amparis.com.br',
+                  sub: null,
+                  href: 'mailto:larissarocha@amparis.com.br',
                 },
                 {
-                  icon: '🕐',
-                  label: 'Horário',
-                  value: 'Segunda a Sexta: 8h às 18h',
+                  Icon: MapPin,
+                  label: 'Endereço',
+                  value: 'Rua Barcelona, 340, B — Sala 05\nJaguaré, São Paulo — SP\nCEP: 05331-011',
+                  sub: null,
+                  href: null,
                 },
-              ].map((item) => (
-                <div key={item.label} className="flex gap-4 items-start">
-                  <div
-                    className="w-11 h-11 rounded-sm flex items-center justify-center flex-shrink-0 text-base"
-                    style={{ background: '#1a2744' }}
-                  >
-                    <span>{item.icon}</span>
+                {
+                  Icon: Clock,
+                  label: 'Atendimento',
+                  value: 'Seg — Sex: 8h às 18h',
+                  sub: 'Online para todo o Brasil',
+                  href: null,
+                },
+              ].map(({ Icon, label, value, sub, href }) => (
+                <div key={label} className="flex gap-4 items-start">
+                  <div className="w-10 h-10 rounded-lg bg-[#0b1c2c] flex items-center justify-center flex-shrink-0">
+                    <Icon size={16} className="text-[#c5a059]" />
                   </div>
                   <div>
-                    <p className="text-[#b8964a] text-xs tracking-widest uppercase mb-1" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                      {item.label}
+                    <p
+                      className="text-[#c5a059] text-xs font-semibold tracking-widest uppercase mb-0.5"
+                      style={{ fontFamily: 'Montserrat, sans-serif' }}
+                    >
+                      {label}
                     </p>
-                    <p className="text-gray-700 text-sm whitespace-pre-line" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}>
-                      {item.value}
-                    </p>
+                    {href ? (
+                      <a
+                        href={href}
+                        target={href.startsWith('http') ? '_blank' : undefined}
+                        rel="noopener noreferrer"
+                        className="text-[#333] text-sm hover:text-[#c5a059] transition-colors whitespace-pre-line"
+                        style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400 }}
+                      >
+                        {value}
+                      </a>
+                    ) : (
+                      <p
+                        className="text-[#333] text-sm whitespace-pre-line"
+                        style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400 }}
+                      >
+                        {value}
+                      </p>
+                    )}
+                    {sub && (
+                      <p className="text-[#aaa] text-xs mt-0.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                        {sub}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
 
             {/* WhatsApp CTA */}
-            <div className="mt-10">
-              <a
-                href="https://wa.me/5511300000000"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#25D366] text-white px-6 py-3 rounded-sm text-sm font-medium transition-opacity hover:opacity-90"
-                style={{ fontFamily: 'Montserrat, sans-serif' }}
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                </svg>
-                Fale pelo WhatsApp
-              </a>
+            <a
+              href={WA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1ebe5c] text-white font-semibold py-3.5 rounded text-sm transition-colors"
+              style={{ fontFamily: 'Montserrat, sans-serif' }}
+            >
+              <MessageCircle size={17} />
+              Falar Agora pelo WhatsApp
+            </a>
+          </div>
+
+          {/* Right col — Form */}
+          <div className="lg:col-span-3">
+            <div className="bg-[#f8f7f5] rounded-lg p-8 border border-gray-100">
+              {status === 'success' ? (
+                <div className="text-center py-10">
+                  <div
+                    className="text-[#c5a059] mb-4"
+                    style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '3rem' }}
+                  >
+                    ✓
+                  </div>
+                  <h3
+                    className="text-[#0b1c2c] mb-2"
+                    style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem' }}
+                  >
+                    Mensagem enviada!
+                  </h3>
+                  <p
+                    className="text-[#666] text-sm"
+                    style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}
+                  >
+                    A Dra. Larissa entrará em contato em até 24 horas úteis.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                  <h3
+                    className="text-[#0b1c2c] mb-2"
+                    style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.5rem' }}
+                  >
+                    Solicite uma Análise Gratuita
+                  </h3>
+
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs text-[#888] uppercase tracking-widest mb-1.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                        Nome completo *
+                      </label>
+                      <input
+                        type="text"
+                        name="nome"
+                        required
+                        value={form.nome}
+                        onChange={handleChange}
+                        placeholder="Seu nome"
+                        className="w-full bg-white border border-gray-200 px-4 py-3 text-sm outline-none focus:border-[#c5a059] transition-colors rounded"
+                        style={{ fontFamily: 'Montserrat, sans-serif' }}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs text-[#888] uppercase tracking-widest mb-1.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                        Telefone / WhatsApp *
+                      </label>
+                      <input
+                        type="tel"
+                        name="telefone"
+                        required
+                        value={form.telefone}
+                        onChange={handleChange}
+                        placeholder="(11) 99999-9999"
+                        className="w-full bg-white border border-gray-200 px-4 py-3 text-sm outline-none focus:border-[#c5a059] transition-colors rounded"
+                        style={{ fontFamily: 'Montserrat, sans-serif' }}
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs text-[#888] uppercase tracking-widest mb-1.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                      Qual assunto você quer tratar? *
+                    </label>
+                    <select
+                      name="assunto"
+                      required
+                      value={form.assunto}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-gray-200 px-4 py-3 text-sm outline-none focus:border-[#c5a059] transition-colors rounded"
+                      style={{ fontFamily: 'Montserrat, sans-serif' }}
+                    >
+                      <option value="">Selecione um assunto</option>
+                      <option value="Dúvida sobre BPC / LOAS">Dúvida sobre BPC / LOAS</option>
+                      <option value="Dúvida sobre Aposentadoria">Dúvida sobre Aposentadoria</option>
+                      <option value="Meu benefício foi negado">Meu benefício foi negado</option>
+                      <option value="Revisão de benefício">Revisão de benefício</option>
+                      <option value="Outros assuntos previdenciários">Outros assuntos previdenciários</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs text-[#888] uppercase tracking-widest mb-1.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                      Conte brevemente o seu caso
+                    </label>
+                    <textarea
+                      name="mensagem"
+                      value={form.mensagem}
+                      onChange={handleChange}
+                      rows={4}
+                      placeholder="Descreva sua situação para que a Dra. Larissa possa analisar com mais detalhes..."
+                      className="w-full bg-white border border-gray-200 px-4 py-3 text-sm outline-none focus:border-[#c5a059] transition-colors resize-none rounded"
+                      style={{ fontFamily: 'Montserrat, sans-serif' }}
+                    />
+                  </div>
+
+                  <p className="text-[#aaa] text-xs" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    🔒 Seus dados são tratados com total sigilo e confidencialidade.
+                  </p>
+
+                  {status === 'error' && (
+                    <p className="text-red-500 text-xs" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                      Ocorreu um erro. Tente nos contatar diretamente pelo WhatsApp.
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    className="bg-[#c5a059] hover:bg-[#e0bb71] disabled:opacity-60 text-[#0b1c2c] font-semibold py-3.5 rounded text-sm transition-colors"
+                    style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.05em' }}
+                  >
+                    {status === 'loading' ? 'Enviando...' : 'Enviar para Análise Gratuita'}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
+        </div>
 
-          {/* Right — Form */}
-          <div
-            className="p-10 rounded-sm shadow-xl"
-            style={{ background: 'white' }}
-          >
-            {sent ? (
-              <div className="text-center py-12">
-                <div className="text-[#b8964a] text-5xl mb-6" style={{ fontFamily: 'Cormorant Garamond, serif' }}>✓</div>
-                <h3
-                  className="text-[#1a2744] mb-3"
-                  style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.8rem' }}
-                >
-                  Mensagem enviada!
-                </h3>
-                <p className="text-gray-500 text-sm" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}>
-                  Entraremos em contato em até 24 horas úteis.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                <h3
-                  className="text-[#1a2744] mb-2"
-                  style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.8rem' }}
-                >
-                  Envie sua mensagem
-                </h3>
-
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-xs text-gray-500 tracking-widest uppercase block mb-1.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                      Nome completo *
-                    </label>
-                    <input
-                      type="text"
-                      name="nome"
-                      required
-                      value={form.nome}
-                      onChange={handleChange}
-                      className="w-full border border-gray-200 px-4 py-3 text-sm outline-none focus:border-[#b8964a] transition-colors"
-                      style={{ fontFamily: 'Montserrat, sans-serif' }}
-                      placeholder="Seu nome"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-xs text-gray-500 tracking-widest uppercase block mb-1.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                      Telefone *
-                    </label>
-                    <input
-                      type="tel"
-                      name="telefone"
-                      required
-                      value={form.telefone}
-                      onChange={handleChange}
-                      className="w-full border border-gray-200 px-4 py-3 text-sm outline-none focus:border-[#b8964a] transition-colors"
-                      style={{ fontFamily: 'Montserrat, sans-serif' }}
-                      placeholder="(11) 99999-9999"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="text-xs text-gray-500 tracking-widest uppercase block mb-1.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                    E-mail *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    value={form.email}
-                    onChange={handleChange}
-                    className="w-full border border-gray-200 px-4 py-3 text-sm outline-none focus:border-[#b8964a] transition-colors"
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
-                    placeholder="seu@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label className="text-xs text-gray-500 tracking-widest uppercase block mb-1.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                    Área de interesse
-                  </label>
-                  <select
-                    name="area"
-                    value={form.area}
-                    onChange={handleChange}
-                    className="w-full border border-gray-200 px-4 py-3 text-sm outline-none focus:border-[#b8964a] transition-colors bg-white"
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
-                  >
-                    <option value="">Selecione uma área</option>
-                    {areas.map((a) => (
-                      <option key={a} value={a}>{a}</option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label className="text-xs text-gray-500 tracking-widest uppercase block mb-1.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                    Mensagem
-                  </label>
-                  <textarea
-                    name="mensagem"
-                    value={form.mensagem}
-                    onChange={handleChange}
-                    rows={4}
-                    className="w-full border border-gray-200 px-4 py-3 text-sm outline-none focus:border-[#b8964a] transition-colors resize-none"
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
-                    placeholder="Descreva brevemente sua situação..."
-                  />
-                </div>
-
-                <p className="text-gray-400 text-xs" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                  Seus dados são tratados com total sigilo e confidencialidade.
-                </p>
-
-                <button type="submit" className="btn-primary w-full text-center">
-                  Solicitar Consulta Gratuita
-                </button>
-              </form>
-            )}
+        {/* Google Maps */}
+        <div className="mt-14 rounded-lg overflow-hidden border border-gray-100 shadow-sm">
+          <div className="bg-[#0b1c2c] px-6 py-4 flex items-center gap-3">
+            <MapPin size={16} className="text-[#c5a059]" />
+            <div>
+              <p className="text-white text-sm font-medium" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                Rua Barcelona, 340, B — Sala 05 · Jaguaré, São Paulo — SP
+              </p>
+              <p className="text-white/40 text-xs" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                CEP 05331-011 · Atendimento também 100% online para todo o Brasil
+              </p>
+            </div>
           </div>
+          <iframe
+            title="Localização Amparis Advocacia"
+            src="https://maps.google.com/maps?q=Rua+Barcelona+340+Jaguaré+São+Paulo+SP&output=embed"
+            width="100%"
+            height="360"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </div>
     </section>

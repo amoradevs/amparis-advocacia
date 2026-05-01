@@ -1,130 +1,123 @@
-export default function About() {
-  const pillars = [
-    {
-      icon: '⚖',
-      title: 'Ética',
-      desc: 'Atuamos com integridade absoluta em cada caso, respeitando os mais altos padrões da ética jurídica.',
-    },
-    {
-      icon: '◈',
-      title: 'Excelência',
-      desc: 'Buscamos a melhor estratégia jurídica para cada situação, com análise cuidadosa e fundamentada.',
-    },
-    {
-      icon: '◉',
-      title: 'Comprometimento',
-      desc: 'Estamos ao lado de nossos clientes em cada etapa do processo, com atenção personalizada.',
-    },
-  ];
+import { Shield, Heart, Star } from 'lucide-react';
 
+export default function About() {
   return (
-    <section id="sobre" className="py-28 bg-[#f8f5ef]">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Left — Image with decorative frame */}
+    <section id="sobre" className="py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-5">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left — Visual element instead of photo */}
           <div className="relative">
+            {/* Decorative gold frame */}
+            <div className="absolute -top-4 -left-4 w-full h-full border border-[#c5a059]/30 rounded-lg" />
+
             <div
-              className="absolute -top-6 -left-6 w-full h-full border-2 border-[#b8964a] opacity-30 rounded-sm"
-            />
-            <div
-              className="relative w-full aspect-[4/5] rounded-sm overflow-hidden shadow-2xl"
-              style={{ background: 'linear-gradient(135deg, #1a2744 0%, #243258 100%)' }}
+              className="relative rounded-lg overflow-hidden"
+              style={{ background: 'linear-gradient(135deg, #0b1c2c 0%, #162c45 100%)', minHeight: '400px' }}
             >
-              {/* Logo version on dark background as decorative visual */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-8 p-12">
-                <div className="text-center">
-                  <p
-                    className="text-white/20 text-xs tracking-[0.5em] uppercase mb-8"
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
-                  >
-                    Fundado em 2013
-                  </p>
-                  <div
-                    className="text-white font-light leading-tight mb-4"
-                    style={{
-                      fontFamily: "'Cormorant Garamond', Georgia, serif",
-                      fontSize: '3.5rem',
-                    }}
-                  >
-                    A
-                  </div>
-                  <div className="w-20 h-px bg-[#b8964a] mx-auto mb-4" />
-                  <p
-                    className="text-[#b8964a] text-xs tracking-[0.5em] uppercase"
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
-                  >
-                    Amparis Advocacia
-                  </p>
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-12 text-center">
+                {/* Scales of justice illustration */}
+                <div className="mb-8 opacity-20">
+                  <svg viewBox="0 0 120 140" className="w-32 h-32 text-[#c5a059]" fill="currentColor">
+                    <rect x="57" y="5" width="6" height="110" rx="2" />
+                    <rect x="22" y="18" width="76" height="5" rx="2" />
+                    <circle cx="60" cy="16" r="8" />
+                    <ellipse cx="28" cy="50" rx="22" ry="6" />
+                    <rect x="24" y="50" width="8" height="38" />
+                    <rect x="14" y="86" width="36" height="5" rx="2" />
+                    <ellipse cx="92" cy="50" rx="22" ry="6" />
+                    <rect x="88" y="50" width="8" height="38" />
+                    <rect x="78" y="86" width="36" height="5" rx="2" />
+                    <rect x="46" y="115" width="28" height="6" rx="2" />
+                  </svg>
                 </div>
 
-                <div className="w-full border-t border-white/10 pt-8 grid grid-cols-2 gap-6 text-center">
-                  <div>
-                    <p className="text-[#b8964a] text-3xl font-light mb-1" style={{ fontFamily: 'Cormorant Garamond, serif' }}>+10</p>
-                    <p className="text-white/40 text-xs tracking-widest uppercase">Anos</p>
-                  </div>
-                  <div>
-                    <p className="text-[#b8964a] text-3xl font-light mb-1" style={{ fontFamily: 'Cormorant Garamond, serif' }}>+500</p>
-                    <p className="text-white/40 text-xs tracking-widest uppercase">Casos</p>
-                  </div>
+                <p
+                  className="text-[#c5a059] text-xs tracking-[0.4em] uppercase font-semibold mb-4"
+                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                >
+                  Dra. Larissa Rocha
+                </p>
+                <p
+                  className="text-white italic text-xl font-light mb-6 leading-relaxed"
+                  style={{ fontFamily: 'Cormorant Garamond, serif' }}
+                >
+                  &ldquo;Cada caso que chega até mim traz uma história de luta.
+                  Meu compromisso é estar ao lado dessas pessoas até o fim.&rdquo;
+                </p>
+                <div className="w-8 h-px bg-[#c5a059]/50 mb-4" />
+
+                <div className="grid grid-cols-3 gap-6 w-full">
+                  {[
+                    { label: 'Especialidade', value: 'BPC & APOSEN.' },
+                    { label: 'Atendimento', value: 'Todo Brasil' },
+                    { label: 'Início', value: '1ª Consulta Grátis' },
+                  ].map((stat) => (
+                    <div key={stat.label} className="text-center">
+                      <p className="text-[#c5a059] text-xs font-semibold mb-1" style={{ fontFamily: 'Montserrat, sans-serif' }}>{stat.value}</p>
+                      <p className="text-white/30 text-xs uppercase tracking-wider" style={{ fontFamily: 'Montserrat, sans-serif' }}>{stat.label}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right — Text content */}
+          {/* Right — Text */}
           <div>
-            <p className="text-[#b8964a] text-xs tracking-[0.4em] uppercase font-medium mb-4">
-              Quem Somos
-            </p>
-
-            <h2
-              className="text-[#1a2744] leading-tight mb-6"
-              style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
-                fontSize: 'clamp(2.2rem, 4vw, 3.2rem)',
-                fontWeight: 300,
-              }}
+            <p
+              className="text-[#c5a059] text-xs tracking-[0.4em] uppercase font-semibold mb-3"
+              style={{ fontFamily: 'Montserrat, sans-serif' }}
             >
-              Um escritório fundado
+              Quem está ao seu lado
+            </p>
+            <h2
+              className="text-[#0b1c2c] mb-5"
+              style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.9rem, 4vw, 2.8rem)', fontWeight: 600 }}
+            >
+              Dra. <span className="italic text-[#c5a059]">Larissa Rocha</span>
               <br />
-              <span className="text-[#b8964a] italic">na confiança</span> e na
-              <br />
-              excelência jurídica
+              Advogada Previdenciarista
             </h2>
 
-            <span className="section-divider mb-8" />
+            <div className="w-10 h-0.5 bg-[#c5a059] mb-6" />
 
-            <p className="text-gray-600 leading-relaxed mb-5 text-sm" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}>
-              A Amparis Advocacia nasceu com a missão de oferecer assessoria jurídica de alto nível,
-              com atendimento personalizado e estratégias eficazes para proteger os direitos de cada cliente.
+            <p
+              className="text-[#555] text-sm leading-relaxed mb-5"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}
+            >
+              A Amparis Advocacia nasceu com um propósito muito claro e inegociável:
+              humanizar o Direito Previdenciário por meio de um atendimento verdadeiramente acolhedor.
             </p>
-
-            <p className="text-gray-600 leading-relaxed mb-10 text-sm" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}>
-              Nosso time é formado por advogados especializados em diferentes áreas do Direito,
-              comprometidos em entregar não apenas resultados jurídicos, mas paz de espírito e
-              segurança para quem nos confia seus interesses.
+            <p
+              className="text-[#555] text-sm leading-relaxed mb-5"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}
+            >
+              Sabemos que buscar o INSS é, muitas vezes, um processo desgastante, repleto de exigências
+              que deixam as pessoas perdidas. Por isso, nosso compromisso vai muito além da excelência técnica.
+            </p>
+            <p
+              className="text-[#555] text-sm leading-relaxed mb-8"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}
+            >
+              Nosso pilar é o <strong className="text-[#0b1c2c] font-medium">amparo</strong>. Analisamos a sua história com cuidado,
+              traçamos a rota mais segura e <strong className="text-[#0b1c2c] font-medium">não desistimos</strong> diante da primeira
+              barreira. Estaremos ao seu lado até o fim.
             </p>
 
             {/* Pillars */}
-            <div className="flex flex-col gap-6">
-              {pillars.map((p) => (
-                <div key={p.title} className="flex gap-5 items-start">
-                  <div
-                    className="w-12 h-12 rounded-sm flex items-center justify-center flex-shrink-0 text-[#b8964a] text-xl"
-                    style={{ background: '#f5edd8', border: '1px solid #e8d9b0' }}
-                  >
-                    {p.icon}
+            <div className="flex flex-col gap-4">
+              {[
+                { Icon: Shield, label: 'Ética e Transparência', desc: 'Honorários claros, processo acompanhável, sem surpresas.' },
+                { Icon: Heart, label: 'Atendimento Humanizado', desc: 'Você é mais do que um processo — é uma história que merece atenção.' },
+                { Icon: Star, label: 'Comprometimento Total', desc: 'Do primeiro contato ao recebimento do benefício, estamos com você.' },
+              ].map(({ Icon, label, desc }) => (
+                <div key={label} className="flex gap-4 items-start">
+                  <div className="w-9 h-9 rounded bg-[#fdf6ea] flex items-center justify-center flex-shrink-0">
+                    <Icon size={17} className="text-[#c5a059]" />
                   </div>
                   <div>
-                    <h4
-                      className="text-[#1a2744] mb-1 text-lg"
-                      style={{ fontFamily: 'Cormorant Garamond, serif' }}
-                    >
-                      {p.title}
-                    </h4>
-                    <p className="text-gray-500 text-xs leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}>
-                      {p.desc}
-                    </p>
+                    <p className="text-[#0b1c2c] font-medium text-sm mb-0.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>{label}</p>
+                    <p className="text-[#888] text-xs leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}>{desc}</p>
                   </div>
                 </div>
               ))}

@@ -4,7 +4,7 @@ import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-cormorant",
   display: "swap",
@@ -12,28 +12,31 @@ const cormorant = Cormorant_Garamond({
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600"],
   variable: "--font-montserrat",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Amparis Advocacia | Excelência Jurídica",
+  title: "Amparis Advocacia | BPC e Aposentadoria — Dra. Larissa Rocha",
   description:
-    "Escritório de advocacia especializado em Direito Civil, Trabalhista, Previdenciário, Empresarial, do Consumidor e Imobiliário. Consulta gratuita.",
+    "Especialistas em BPC/LOAS e Aposentadoria. Atendimento humanizado, honorários só no êxito. Consulta gratuita para todo o Brasil. Dra. Larissa Rocha — OAB/SP.",
   keywords: [
-    "advocacia",
-    "advogado",
-    "escritório de advocacia",
-    "direito civil",
-    "direito trabalhista",
-    "direito previdenciário",
+    "BPC LOAS advogado",
+    "aposentadoria INSS",
+    "advogada previdenciarista",
+    "benefício negado INSS",
     "Amparis Advocacia",
-    "São Paulo",
+    "Dra Larissa Rocha",
+    "BPC idoso",
+    "BPC deficiência",
+    "aposentadoria por idade",
+    "planejamento previdenciário",
   ],
   openGraph: {
-    title: "Amparis Advocacia",
-    description: "Assessoria jurídica com excelência, ética e comprometimento.",
+    title: "Amparis Advocacia | BPC e Aposentadoria",
+    description:
+      "Atendimento humanizado para garantir o seu BPC ou Aposentadoria. Honorários apenas no êxito. Análise gratuita do caso.",
     type: "website",
     locale: "pt_BR",
   },
@@ -41,11 +44,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className={`${cormorant.variable} ${montserrat.variable}`}>
+    <html
+      lang="pt-BR"
+      className={`${cormorant.variable} ${montserrat.variable}`}
+    >
       <body>{children}</body>
     </html>
   );
