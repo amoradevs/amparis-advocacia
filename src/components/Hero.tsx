@@ -9,7 +9,7 @@ export default function Hero() {
       id="inicio"
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
       style={{
-        background: 'linear-gradient(150deg, #13213a 0%, #1c2d4a 60%, #243d5e 100%)',
+        background: 'linear-gradient(150deg, #0a1628 0%, #111f38 50%, #1c2d4a 100%)',
       }}
     >
       {/* Gold line top */}
@@ -48,12 +48,14 @@ export default function Hero() {
 
         {/* Headline — tamanho generoso para leitura fácil */}
         <h1
-          className="text-white mb-6 max-w-3xl"
+          className="mb-6 max-w-3xl"
           style={{
             fontFamily: 'Cormorant Garamond, Georgia, serif',
             fontSize: 'clamp(2.8rem, 6vw, 5rem)',
-            fontWeight: 600,
+            fontWeight: 700,
             lineHeight: 1.1,
+            color: '#ffffff',
+            textShadow: '0 2px 20px rgba(0,0,0,0.4)',
           }}
         >
           Amparo e Segurança
@@ -66,12 +68,13 @@ export default function Hero() {
 
         {/* Subtitle — fonte mínima 17px */}
         <p
-          className="text-white/70 mb-10 max-w-xl"
+          className="mb-10 max-w-xl"
           style={{
             fontFamily: 'Montserrat, sans-serif',
             fontSize: '1.0625rem',
-            fontWeight: 300,
+            fontWeight: 400,
             lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.85)',
           }}
         >
           Mais do que excelência jurídica, um atendimento cuidadoso
