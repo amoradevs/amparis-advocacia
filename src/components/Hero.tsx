@@ -84,7 +84,7 @@ export default function Hero() {
 
         {/* CTAs — primário WhatsApp, secundário formulário */}
         <div className="flex flex-col sm:flex-row gap-4 mb-16">
-          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-wa">
+          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-gold">
             <MessageCircle size={20} />
             Falar agora pelo WhatsApp
           </a>
