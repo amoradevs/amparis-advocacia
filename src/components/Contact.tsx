@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { MessageCircle, Mail, MapPin, Clock } from 'lucide-react';
 
 const WA_URL =
-  'https://wa.me/5511999999999?text=Olá!%20Vim%20pelo%20site%20da%20Amparis%20Advocacia%20e%20gostaria%20de%20uma%20análise%20gratuita%20do%20meu%20caso.';
+  'https://wa.me/5511997904557?text=Olá!%20Vim%20pelo%20site%20da%20Amparis%20Advocacia%20e%20gostaria%20de%20uma%20análise%20gratuita%20do%20meu%20caso.';
 
 export default function Contact() {
   const [form, setForm] = useState({ nome: '', telefone: '', assunto: '', mensagem: '' });

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { MessageCircle } from 'lucide-react';
 
 const WA_URL =
-  'https://wa.me/5511999999999?text=Olá!%20Vim%20pelo%20site%20da%20Amparis%20Advocacia%20e%20gostaria%20de%20uma%20análise%20gratuita%20do%20meu%20caso.';
+  'https://wa.me/5511997904557?text=Olá!%20Vim%20pelo%20site%20da%20Amparis%20Advocacia%20e%20gostaria%20de%20uma%20análise%20gratuita%20do%20meu%20caso.';
 
 export default function Footer() {
   return (
@@ -85,7 +85,7 @@ export default function Footer() {
               style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.65 }}
             >
               <p>larissarocha@amparis.com.br</p>
-              <p>(11) 99999-9999</p>
+              <p>(11) 99790-4557</p>
               <p>Rua Barcelona, 340, B — Sala 05<br />Jaguaré, São Paulo — SP<br />CEP: 05331-011</p>
               <p>Seg — Sex: 8h às 18h</p>
             </div>
