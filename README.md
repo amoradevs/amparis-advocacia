@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Amparis Advocacia — Site Institucional
 
-## Getting Started
+Site institucional do escritório **Amparis Advocacia**, desenvolvido com Next.js 16, TypeScript e Tailwind CSS v4.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** Next.js 16 (App Router)
+- **Linguagem:** TypeScript
+- **Estilo:** Tailwind CSS v4
+- **Fontes:** Cormorant Garamond + Montserrat (Google Fonts)
+
+## Estrutura do Projeto
+
+```
+src/
+  app/
+    layout.tsx       # Root layout com fontes e metadados
+    page.tsx         # Página principal
+    globals.css      # Variáveis de cor e estilos globais
+  components/
+    Navbar.tsx       # Navegação com scroll effect
+    Hero.tsx         # Seção de abertura
+    About.tsx        # Sobre o escritório
+    PracticeAreas.tsx # Áreas de atuação
+    Team.tsx         # Equipe
+    Contact.tsx      # Formulário de contato
+    Footer.tsx       # Rodapé
+
+public/
+  Fundo_escuro.jpg  # Logo sobre fundo marinho
+  Fundo_claro.jpg   # Logo sobre fundo branco
+  Favicom.jpg       # Ícone do escritório
+
+docs/
+  design/           # Guia de marca e identidade visual
+  content/          # Guia de conteúdo e textos
+  deploy/           # Instruções de deploy e infra
+  legal/            # Documentos legais (privacidade, termos)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Desenvolvimento Local
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Acesse [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+## Deploy
 
-To learn more about Next.js, take a look at the following resources:
+Projeto pronto para deploy no **Vercel**. Veja [docs/deploy/deploy-guide.md](docs/deploy/deploy-guide.md) para instruções completas.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Documentação
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Documento | Descrição |
+|-----------|-----------|
+| [docs/design/brand-guide.md](docs/design/brand-guide.md) | Cores, tipografia, assets |
+| [docs/content/content-guide.md](docs/content/content-guide.md) | Textos, conteúdo das seções |
+| [docs/deploy/deploy-guide.md](docs/deploy/deploy-guide.md) | Deploy, variáveis, domínio |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© Amparis Advocacia
