@@ -1,18 +1,20 @@
+import { XCircle, HelpCircle, RefreshCw, FileWarning } from 'lucide-react';
+
 const situations = [
   {
-    emoji: '😔',
+    Icon: XCircle,
     text: 'Tive meu BPC ou Aposentadoria negado e não sei o que fazer',
   },
   {
-    emoji: '❓',
+    Icon: HelpCircle,
     text: 'Não sei se tenho direito ao benefício e por onde começar',
   },
   {
-    emoji: '😤',
+    Icon: RefreshCw,
     text: 'Já tentei resolver sozinho e continua sem resposta do INSS',
   },
   {
-    emoji: '📋',
+    Icon: FileWarning,
     text: 'Estou perdido na burocracia e nas exigências do sistema',
   },
 ];
@@ -22,7 +24,6 @@ export default function Problem() {
     <section className="py-20" style={{ background: '#f7f5f1' }}>
       <div className="max-w-6xl mx-auto px-5">
         <div className="text-center mb-12">
-          {/* Label */}
           <p
             className="font-semibold mb-3"
             style={{
@@ -35,8 +36,6 @@ export default function Problem() {
           >
             Você se identifica?
           </p>
-
-          {/* Title */}
           <h2
             className="mb-4"
             style={{
@@ -47,8 +46,6 @@ export default function Problem() {
           >
             Situações que a Amparis resolve todo dia
           </h2>
-
-          {/* Subtitle — legível, não microscópico */}
           <p
             className="max-w-xl mx-auto"
             style={{
@@ -64,30 +61,33 @@ export default function Problem() {
           </p>
         </div>
 
-        {/* Cards — touch targets generosos */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
-          {situations.map((s) => (
+          {situations.map(({ Icon, text }) => (
             <div
-              key={s.text}
-              className="bg-white rounded-xl p-7 shadow-sm"
+              key={text}
+              className="bg-white rounded-xl p-7 shadow-sm flex flex-col gap-5"
               style={{ border: '1px solid #eee' }}
             >
-              <div className="text-4xl mb-4">{s.emoji}</div>
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                style={{ background: '#f0f4fa' }}
+              >
+                <Icon size={24} style={{ color: '#1c2d4a' }} strokeWidth={1.5} />
+              </div>
               <p
                 style={{
                   fontFamily: 'Montserrat, sans-serif',
                   fontSize: '0.9375rem',
                   color: '#444',
-                  lineHeight: 1.6,
+                  lineHeight: 1.65,
                 }}
               >
-                {s.text}
+                {text}
               </p>
             </div>
           ))}
         </div>
 
-        {/* Resposta empática */}
         <div
           className="rounded-xl p-10 text-center"
           style={{ background: '#1c2d4a' }}

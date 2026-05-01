@@ -22,22 +22,6 @@ export default function About() {
               }}
             >
               <div className="p-10 flex flex-col justify-between h-full gap-10">
-                {/* Balança SVG */}
-                <div className="flex justify-center opacity-15">
-                  <svg viewBox="0 0 120 140" className="w-28 h-28 text-white" fill="currentColor">
-                    <rect x="57" y="5" width="6" height="110" rx="2" />
-                    <rect x="22" y="18" width="76" height="5" rx="2" />
-                    <circle cx="60" cy="16" r="8" />
-                    <ellipse cx="28" cy="50" rx="22" ry="6" />
-                    <rect x="24" y="50" width="8" height="38" />
-                    <rect x="14" y="86" width="36" height="5" rx="2" />
-                    <ellipse cx="92" cy="50" rx="22" ry="6" />
-                    <rect x="88" y="50" width="8" height="38" />
-                    <rect x="78" y="86" width="36" height="5" rx="2" />
-                    <rect x="46" y="115" width="28" height="6" rx="2" />
-                  </svg>
-                </div>
-
                 {/* Citação */}
                 <blockquote
                   className="text-center"
