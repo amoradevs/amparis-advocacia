@@ -1,4 +1,4 @@
-import { XCircle, HelpCircle, RefreshCw, FileWarning, Clock } from 'lucide-react';
+import { XCircle, HelpCircle, RefreshCw, FileWarning, Clock, Baby } from 'lucide-react';
 
 const situations = [
   {
@@ -20,6 +20,10 @@ const situations = [
   {
     Icon: Clock,
     text: 'Acho que eu já podia ter me aposentado, mas não tenho certeza',
+  },
+  {
+    Icon: Baby,
+    text: 'Não sei se meu filho autista tem direito ao benefício',
   },
 ];
 
