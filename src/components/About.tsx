@@ -3,96 +3,123 @@ import { Shield, Heart, Star } from 'lucide-react';
 
 export default function About() {
   return (
-    <section id="sobre" className="py-24 bg-white overflow-hidden">
+    <section id="sobre" className="py-24" style={{ background: '#f7f5f1' }}>
       <div className="max-w-6xl mx-auto px-5">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
 
-          {/* Coluna esquerda — foto com frame decorativo */}
-          <div className="relative order-2 lg:order-1 flex justify-center">
-            {/* Frame dourado deslocado */}
-            <div
-              className="absolute top-6 left-6 w-full h-full rounded-2xl"
-              style={{ border: '1.5px solid rgba(184,148,80,0.35)', zIndex: 0 }}
-            />
+        {/* Label centralizado */}
+        <p
+          className="text-center font-semibold mb-3"
+          style={{
+            color: '#b89450',
+            fontFamily: 'Montserrat, sans-serif',
+            fontSize: '0.75rem',
+            letterSpacing: '0.35em',
+            textTransform: 'uppercase',
+          }}
+        >
+          Quem está ao seu lado
+        </p>
+        <h2
+          className="text-center mb-16"
+          style={{
+            fontFamily: 'Cormorant Garamond, serif',
+            fontSize: 'clamp(2rem, 4vw, 2.9rem)',
+            color: '#1c2d4a',
+            lineHeight: 1.15,
+          }}
+        >
+          Dra.{' '}
+          <span style={{ color: '#b89450', fontStyle: 'italic' }}>Larissa Rocha</span>
+          {' '}— Advogada Previdenciarista
+        </h2>
 
-            {/* Container da foto */}
-            <div
-              className="relative w-full rounded-2xl overflow-hidden"
-              style={{ aspectRatio: '4/5', maxWidth: '460px', zIndex: 1 }}
-            >
-              <Image
-                src="/Larissa_Perfil.jpeg"
-                alt="Dra. Larissa Rocha — Advogada Previdenciarista"
-                fill
-                className="object-cover object-top"
-                priority
-              />
+        <div className="grid lg:grid-cols-5 gap-14 items-start">
 
-              {/* Badge sobreposição no rodapé da foto */}
+          {/* Coluna foto — 2 de 5 */}
+          <div className="lg:col-span-2 order-2 lg:order-1">
+            {/* Wrapper com padding para o frame aparecer */}
+            <div className="relative pl-4 pt-4">
+              {/* Frame decorativo dourado atrás */}
               <div
-                className="absolute bottom-0 inset-x-0 px-7 py-6"
+                className="absolute top-0 left-0 rounded-2xl"
                 style={{
-                  background: 'linear-gradient(to top, rgba(12,26,46,0.92) 0%, transparent 100%)',
+                  right: '16px',
+                  bottom: '16px',
+                  border: '1.5px solid rgba(184,148,80,0.4)',
                 }}
+              />
+              {/* Foto */}
+              <div
+                className="relative rounded-2xl overflow-hidden shadow-xl"
+                style={{ aspectRatio: '3/4' }}
               >
-                <p
+                <Image
+                  src="/Larissa_Perfil.jpeg"
+                  alt="Dra. Larissa Rocha — Advogada Previdenciarista"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
+                {/* Overlay gradiente + nome */}
+                <div
+                  className="absolute bottom-0 inset-x-0 px-6 py-5"
                   style={{
-                    fontFamily: 'Cormorant Garamond, serif',
-                    fontSize: '1.35rem',
-                    fontWeight: 600,
-                    color: '#ffffff',
-                    marginBottom: '2px',
+                    background: 'linear-gradient(to top, rgba(10,22,42,0.9) 0%, transparent 100%)',
                   }}
                 >
-                  Dra. Larissa Rocha
-                </p>
-                <p
-                  style={{
-                    fontFamily: 'Montserrat, sans-serif',
-                    fontSize: '0.75rem',
-                    color: '#b89450',
-                    fontWeight: 500,
-                    letterSpacing: '0.08em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Advogada Previdenciarista · OAB/SP
-                </p>
+                  <p
+                    style={{
+                      fontFamily: 'Cormorant Garamond, serif',
+                      fontSize: '1.25rem',
+                      fontWeight: 600,
+                      color: '#ffffff',
+                      marginBottom: '2px',
+                    }}
+                  >
+                    Dra. Larissa Rocha
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: 'Montserrat, sans-serif',
+                      fontSize: '0.7rem',
+                      color: '#b89450',
+                      fontWeight: 500,
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    Advogada Previdenciarista · OAB/SP
+                  </p>
+                </div>
               </div>
+            </div>
+
+            {/* Credenciais abaixo da foto */}
+            <div
+              className="mt-6 rounded-xl p-5 grid grid-cols-2 gap-4"
+              style={{ background: '#1c2d4a' }}
+            >
+              {[
+                { label: 'Experiência', value: '15 anos' },
+                { label: 'Especialidade', value: 'BPC & Aposentadoria' },
+                { label: 'Mestrado', value: 'Mackenzie' },
+                { label: 'Atendimento', value: 'Todo o Brasil' },
+              ].map((c) => (
+                <div key={c.label}>
+                  <p style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '3px' }}>
+                    {c.label}
+                  </p>
+                  <p style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.85rem', color: '#b89450', fontWeight: 500 }}>
+                    {c.value}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Coluna direita — conteúdo */}
-          <div className="order-1 lg:order-2">
-            <p
-              className="font-semibold mb-3"
-              style={{
-                color: '#b89450',
-                fontFamily: 'Montserrat, sans-serif',
-                fontSize: '0.75rem',
-                letterSpacing: '0.35em',
-                textTransform: 'uppercase',
-              }}
-            >
-              Quem está ao seu lado
-            </p>
-
-            <h2
-              className="mb-5"
-              style={{
-                fontFamily: 'Cormorant Garamond, serif',
-                fontSize: 'clamp(2rem, 4vw, 2.9rem)',
-                color: '#1c2d4a',
-                lineHeight: 1.15,
-              }}
-            >
-              Dra.{' '}
-              <span style={{ color: '#b89450', fontStyle: 'italic' }}>Larissa Rocha</span>
-              <br />
-              Advogada Previdenciarista
-            </h2>
-
-            <div className="w-10 h-0.5 mb-7" style={{ background: '#b89450' }} />
+          {/* Coluna conteúdo — 3 de 5 */}
+          <div className="lg:col-span-3 order-1 lg:order-2">
+            <div className="w-10 h-0.5 mb-8" style={{ background: '#b89450' }} />
 
             {/* Bio */}
             <p
@@ -102,7 +129,7 @@ export default function About() {
                 fontSize: '1rem',
                 color: '#444',
                 fontWeight: 300,
-                lineHeight: 1.8,
+                lineHeight: 1.85,
               }}
             >
               Larissa Rocha é Advogada Previdenciarista há{' '}
@@ -112,46 +139,21 @@ export default function About() {
               <strong style={{ fontWeight: 500, color: '#1c2d4a' }}>MACKENZIE</strong>.
             </p>
             <p
-              className="mb-8"
+              className="mb-10"
               style={{
                 fontFamily: 'Montserrat, sans-serif',
                 fontSize: '1rem',
                 color: '#444',
                 fontWeight: 300,
-                lineHeight: 1.8,
+                lineHeight: 1.85,
               }}
             >
               Sempre cheia de fé, com coragem e comprometida a ajudar seus
               clientes da melhor forma possível.
             </p>
 
-            {/* Credenciais em chips */}
-            <div className="flex flex-wrap gap-2 mb-10">
-              {[
-                '15 anos de experiência',
-                'BPC & Aposentadoria',
-                'Pós-Graduação Mackenzie',
-                'Atendimento online — Brasil',
-              ].map((c) => (
-                <span
-                  key={c}
-                  className="rounded-full px-4 py-1.5"
-                  style={{
-                    fontFamily: 'Montserrat, sans-serif',
-                    fontSize: '0.8rem',
-                    color: '#1c2d4a',
-                    fontWeight: 500,
-                    background: '#f0f4fa',
-                    border: '1px solid #e2e8f0',
-                  }}
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
-
             {/* Pilares */}
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-6 mb-10">
               {[
                 {
                   Icon: Shield,
@@ -171,20 +173,20 @@ export default function About() {
               ].map(({ Icon, label, desc }) => (
                 <div key={label} className="flex gap-4 items-start">
                   <div
-                    className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ background: '#fdf5e6' }}
+                    className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ background: '#fff', border: '1px solid #e8e4df' }}
                   >
-                    <Icon size={18} style={{ color: '#b89450' }} />
+                    <Icon size={18} style={{ color: '#b89450' }} strokeWidth={1.5} />
                   </div>
                   <div>
                     <p
-                      className="font-medium mb-0.5"
+                      className="font-medium mb-1"
                       style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9375rem', color: '#1c2d4a' }}
                     >
                       {label}
                     </p>
                     <p
-                      style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.875rem', color: '#888', fontWeight: 300, lineHeight: 1.6 }}
+                      style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.875rem', color: '#888', fontWeight: 300, lineHeight: 1.65 }}
                     >
                       {desc}
                     </p>
@@ -192,43 +194,41 @@ export default function About() {
                 </div>
               ))}
             </div>
+
+            {/* Citação */}
+            <blockquote
+              className="rounded-xl px-8 py-6"
+              style={{ background: '#1c2d4a', borderLeft: '3px solid #b89450' }}
+            >
+              <p
+                className="text-white italic mb-3"
+                style={{
+                  fontFamily: 'Cormorant Garamond, serif',
+                  fontSize: '1.2rem',
+                  fontWeight: 400,
+                  lineHeight: 1.65,
+                }}
+              >
+                &ldquo;Cada caso que chega até mim traz uma história de luta.
+                Meu compromisso é estar ao lado dessas pessoas,
+                com coragem e fé,{' '}
+                <span style={{ color: '#b89450' }}>até o fim.&rdquo;</span>
+              </p>
+              <p
+                style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontSize: '0.75rem',
+                  color: 'rgba(255,255,255,0.4)',
+                  letterSpacing: '0.07em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                — Dra. Larissa Rocha
+              </p>
+            </blockquote>
           </div>
 
         </div>
-
-        {/* Citação — faixa abaixo do grid */}
-        <div
-          className="mt-20 rounded-2xl p-10 text-center"
-          style={{ background: '#1c2d4a' }}
-        >
-          <p
-            className="text-white italic mb-4"
-            style={{
-              fontFamily: 'Cormorant Garamond, serif',
-              fontSize: 'clamp(1.25rem, 2.5vw, 1.75rem)',
-              fontWeight: 400,
-              lineHeight: 1.6,
-            }}
-          >
-            &ldquo;Cada caso que chega até mim traz uma história de luta.
-            Meu compromisso é estar ao lado dessas pessoas,
-            com coragem e fé,{' '}
-            <span style={{ color: '#b89450' }}>até o fim.&rdquo;</span>
-          </p>
-          <div className="w-8 h-0.5 mx-auto mb-3" style={{ background: '#b89450', opacity: 0.5 }} />
-          <p
-            style={{
-              fontFamily: 'Montserrat, sans-serif',
-              fontSize: '0.8rem',
-              color: 'rgba(255,255,255,0.4)',
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-            }}
-          >
-            Dra. Larissa Rocha
-          </p>
-        </div>
-
       </div>
     </section>
   );
