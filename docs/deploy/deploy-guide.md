@@ -2,33 +2,38 @@
 
 ## Stack
 
-- **Framework:** Next.js 16 (App Router)
-- **Linguagem:** TypeScript
-- **Estilo:** Tailwind CSS v4
-- **Fontes:** Google Fonts (Cormorant Garamond + Montserrat)
-- **Deploy:** Vercel (recomendado)
+| Item | Detalhe |
+|------|---------|
+| Framework | Next.js 16.2.4 (App Router, static export) |
+| Linguagem | TypeScript |
+| Estilo | Tailwind CSS v4 |
+| Fontes | Cormorant Garamond + Montserrat (Google Fonts) |
+| Ícones | Lucide React |
+| Formulário | FormSubmit.co (sem backend) |
+| Deploy | Vercel |
+| Repositório | github.com/amoradevs/amparis-advocacia |
 
-## Deploy no Vercel
+## URLs
 
-### Via GitHub (recomendado)
+| Ambiente | URL |
+|----------|-----|
+| Produção | https://www.amparis.com.br |
+| Redirect | https://amparis.com.br → www |
+| Vercel app | https://amparis-advocacia.vercel.app |
 
-1. Acesse [vercel.com](https://vercel.com) e faça login
-2. Clique em "New Project"
-3. Importe o repositório `amoradevs/amparis-advocacia`
-4. Configurações automáticas detectam Next.js — clique em "Deploy"
-5. URL gerada automaticamente
+## DNS (Hostinger)
 
-### Variáveis de Ambiente
+| Tipo | Nome | Destino |
+|------|------|---------|
+| A | @ | 216.198.79.1 |
+| CNAME | www | cname.vercel-dns.com |
+| TXT | @ | google-site-verification=GaB28BBke-HfAnUud6fu7wY4jq1RrMjCm13t3damJj4 |
+| MX | @ | mx1.hostinger.com (prioridade 5) |
+| MX | @ | mx2.hostinger.com (prioridade 10) |
 
-Ainda não há variáveis de ambiente necessárias.
-Quando integrar um backend de formulário (ex: Resend, EmailJS), adicionar:
-```
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=
-```
+> ⚠️ Não alterar os registros MX, SPF e DKIM — são usados pelo e-mail larissarocha@amparis.com.br
 
-### Comandos Locais
+## Deploy Local → Produção
 
 ```bash
 # Instalar dependências
@@ -37,27 +42,29 @@ npm install
 # Desenvolvimento
 npm run dev
 
-# Build de produção
+# Build de produção (verificar erros antes do deploy)
 npm run build
 
-# Iniciar em produção local
-npm start
-
-# Lint
-npm run lint
+# Deploy para produção
+npx vercel --prod
 ```
 
-## Repositório GitHub
+## Variáveis de Ambiente
 
-- **URL:** https://github.com/amoradevs/amparis-advocacia
-- **Branch principal:** `main`
-- **Visibilidade:** Público
+Nenhuma variável de ambiente necessária no momento.
+O formulário usa FormSubmit.co com envio direto para larissarocha@amparis.com.br.
 
-## Próximos Passos
+## SEO e Indexação
 
-- [ ] Conectar Vercel ao repositório GitHub para deploy automático
-- [ ] Configurar domínio personalizado (ex: amparisadvocacia.com.br)
-- [ ] Integrar envio real de e-mail no formulário de contato
-- [ ] Adicionar fotos reais da equipe
-- [ ] Configurar Google Analytics ou similar
-- [ ] Adicionar mapa do Google Maps na seção de contato
+- **Google Search Console:** Verificado via DNS TXT + meta tag
+- **Sitemap:** https://www.amparis.com.br/sitemap.xml (submetido em 02/05/2026)
+- **Schema:** LegalService + Person (JSON-LD no layout.tsx)
+- **Canonical:** https://www.amparis.com.br
+
+## Checklist de Deploy
+
+- [ ] `npm run build` sem erros
+- [ ] TypeScript sem warnings
+- [ ] Formulário testado (envia para larissarocha@amparis.com.br)
+- [ ] WhatsApp float aparece após scroll da hero
+- [ ] Responsivo mobile (testar em 375px e 768px)
