@@ -1,11 +1,11 @@
 # Notas Legais — Amparis Advocacia
 
-## Informações do Escritório
+## Dados do Escritório
 
 | Campo | Valor |
 |-------|-------|
-| Razão Social | Amparis Advocacia |
-| Advogada Responsável | Dra. Larissa Rocha |
+| Nome | Amparis Advocacia |
+| Advogada | Dra. Larissa Rocha |
 | OAB | OAB/SP nº 26.314 |
 | E-mail | larissarocha@amparis.com.br |
 | Endereço | Rua Barcelona, 340, B — Sala 05, Jaguaré, SP, CEP 05331-011 |
@@ -13,19 +13,32 @@
 
 ## Avisos no Site
 
-O rodapé contém o seguinte aviso obrigatório:
+**Rodapé:**
 > "Este site não é vinculado ao INSS ou qualquer órgão governamental. Serviços exclusivamente jurídicos privados."
 
-## Pendências Legais
+## Política de Privacidade
 
-- [ ] Política de Privacidade (LGPD)
-- [ ] Termos de Uso
-- [ ] Aviso de cookies (se analytics for adicionado)
-- [ ] Aviso LGPD no formulário de contato
+Página disponível em: `https://www.amparis.com.br/privacidade`
+
+9 seções cobrindo:
+1. Quem somos
+2. Dados coletados (nome, telefone, assunto, mensagem)
+3. Finalidade do uso
+4. Base legal (LGPD — consentimento + pré-contrato)
+5. Compartilhamento (não compartilhado comercialmente)
+6. Retenção dos dados
+7. Direitos do titular (LGPD)
+8. Segurança (HTTPS/SSL)
+9. Alterações da política
 
 ## Conformidade OAB
 
-- Não há promessa de resultado garantido no conteúdo
-- Honorários descritos como "apenas no êxito" — modelo contingencial permitido
-- Sem fotos de clientes ou depoimentos identificados sem autorização
-- Site não faz publicidade comparativa
+- ✅ Sem promessa de resultado garantido
+- ✅ Honorários descritos como "apenas no êxito" — modelo contingencial permitido
+- ✅ Sem publicidade comparativa
+- ✅ OAB/SP nº 26.314 exibido no rodapé
+
+## Pendências
+
+- [ ] Aviso de consentimento LGPD no formulário de contato (banner ou checkbox)
+- [ ] Cookies: se Google Analytics for adicionado, exigirá banner de cookies

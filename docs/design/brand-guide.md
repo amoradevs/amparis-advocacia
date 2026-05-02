@@ -7,7 +7,7 @@
 | Variável CSS | Hex | Uso |
 |-------------|-----|-----|
 | `--navy` | `#1c2d4a` | Cor principal — fundo do logo, headers, seções escuras |
-| `--navy-deep` | `#13213a` | Hero, menus mobile |
+| `--navy-deep` | `#13213a` | Hero (gradiente), menus mobile |
 | `--gold` | `#b89450` | Acento dourado — arco do logo, CTAs, destaques |
 | `--gold-light` | `#d4af6a` | Hover de botões dourados |
 | `--gold-pale` | `#fdf5e6` | Fundo de ícones em seções claras |
@@ -16,13 +16,13 @@
 
 ### Tipografia
 
-| Fonte | Uso | Pesos |
-|-------|-----|-------|
+| Fonte | Uso | Pesos carregados |
+|-------|-----|-----------------|
 | Cormorant Garamond | Títulos h1–h3, citações | 400, 600, 700 (normal + italic) |
-| Montserrat | Corpo, labels, botões, UI | 300, 400, 500, 600 |
+| Montserrat | Corpo, labels, botões, UI | 300, 400, 600 |
 
-**Tamanhos mínimos:**
-- Body: 16px base (1rem)
+**Regras de tamanho:**
+- Body mínimo: 16px (1rem)
 - Subtítulos: 15px (0.9375rem)
 - Labels uppercase: 12px (0.75rem)
 
@@ -30,48 +30,54 @@
 
 | Classe | Aparência | Uso |
 |--------|-----------|-----|
-| `.btn-gold` | Fundo dourado, texto navy | CTA primário — Hero e HowItWorks |
-| `.btn-outline-gold` | Borda dourada, texto dourado | CTA secundário |
-| `.btn-wa` | Fundo verde WhatsApp | Botão flutuante e menu mobile |
+| `.btn-gold` | Fundo `#b89450`, texto navy | CTA primário (Hero, HowItWorks) |
+| `.btn-outline-gold` | Borda gold, texto gold | CTA secundário |
+| `.btn-wa` | Fundo `#25D366` | Botão flutuante e menu mobile |
 
-> **Hero:** usa `.btn-gold` para o CTA WhatsApp. O verde `.btn-wa` seria muito intenso sobre fundo navy escuro.
+> **Hero**: usa `.btn-gold` para o CTA WhatsApp — o verde seria visualmente muito intenso sobre o fundo navy escuro.
 
-### Logos
+### Logos e Imagens
 
-| Arquivo | Uso |
-|---------|-----|
-| `/Fundo_escuro.jpg` | Navbar e Footer (fundo navy) |
-| `/Fundo_claro.jpg` | Seções brancas (quando necessário) |
-| `/Favicom.jpg` | Favicon |
-| `/Larissa_Perfil.jpeg` | Foto da Dra. Larissa — seção About |
+| Arquivo | Dimensão exibida | Uso |
+|---------|-----------------|-----|
+| `/Fundo_escuro.jpg` | 138×62px | Navbar e Footer |
+| `/Fundo_claro.jpg` | — | Reservado para seções claras |
+| `/Larissa_Perfil.jpeg` | aspect-ratio 16/17 | Seção About (cintura) |
+| `/Favicom.jpg` | 32px | Favicon (aba do navegador) |
 
-Dimensões da logo: 130×58px (Navbar), 130×60px (Footer)
+### Foto da Dra. Larissa (About)
+
+- **Aspect ratio:** `16/17` (ligeiramente mais alto que quadrado)
+- **object-fit:** `cover`, **object-position:** `top`
+- **Enquadramento:** cabeça até a cintura
+- **Frame decorativo:** borda dourada `rgba(184,148,80,0.4)` com offset `pl-4 pt-4`
 
 ### Elementos Decorativos
 
-- **Frame dourado:** `border: 1.5px solid rgba(184,148,80,0.35)` com offset 16px
 - **Linha divisória:** `background: #b89450`, `height: 2px`, `width: 40px`
+- **Frame dourado:** `border: 1.5px solid rgba(184,148,80,0.4)`, offset 16px com `pl-4 pt-4`
 - **Linha top da Hero:** gradiente `transparent → #b89450 → transparent`
 - **Textura diagonal Hero:** `repeating-linear-gradient(-45deg, #b89450...)`, opacidade 3%
 
 ### Ícones
 
-- **Biblioteca:** Lucide React
-- **Estilo:** 2D minimalista, `strokeWidth={1.5}`
-- **Cor em fundos claros:** `#1c2d4a` (navy)
-- **Cor em fundos escuros:** `#b89450` (gold)
+- **Biblioteca:** Lucide React (`strokeWidth={1.5}`)
+- **Cor em fundos claros:** `#1c2d4a`
+- **Cor em fundos escuros:** `#b89450`
+- **Fundo do ícone em seções claras:** `#fdf5e6` (gold-pale)
+- **Fundo do ícone na About:** `#fff` com borda `#e8e4df`
 
 ## Tom de Voz
 
 - **Formal e acessível** — técnico sem ser hermético
 - **Empático e humano** — "Nós não desistimos do seu direito"
-- **Confiança e solidez** — 15 anos, Mackenzie, OAB/SP nº 26.314
-- Evitar: verde em excesso, jargões excessivos, promessas vagas
+- **Confiança:** 15 anos, Mestrado Mackenzie, OAB/SP nº 26.314
+- Evitar: verde excessivo, jargões, promessas de resultado garantido
 
 ## Princípios de UX
 
-- Touch targets: mínimo 52px de altura
-- Texto body: mínimo 16px
+- Touch targets mínimos: 52px de altura
+- Texto body mínimo: 16px
 - Hierarquia de CTA: WhatsApp (primário) → Formulário (secundário)
-- WhatsApp float: aparece somente após scroll sair da Hero
-- Foco exclusivo: BPC e Aposentadoria — não é escritório generalista
+- WhatsApp float: aparece com fade após scroll sair da seção `#inicio`
+- Foco exclusivo: BPC e Aposentadoria
