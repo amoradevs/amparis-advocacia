@@ -48,17 +48,18 @@ export default function About() {
                   border: '1.5px solid rgba(184,148,80,0.4)',
                 }}
               />
-              {/* Foto */}
+              {/* Foto — cortada na cintura */}
               <div
                 className="relative rounded-2xl overflow-hidden shadow-xl"
-                style={{ aspectRatio: '3/4' }}
+                style={{ aspectRatio: '4/3' }}
               >
                 <Image
                   src="/Larissa_Perfil.jpeg"
                   alt="Dra. Larissa Rocha — Advogada Previdenciarista"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover object-top"
+                  className="object-cover"
+                  style={{ objectPosition: 'center 15%' }}
                   loading="lazy"
                 />
                 {/* Overlay gradiente + nome */}
