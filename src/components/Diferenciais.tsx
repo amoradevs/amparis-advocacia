@@ -77,7 +77,7 @@ export default function Diferenciais() {
             }}
           >
             A Amparis nasceu para humanizar o Direito Previdenciário.
-            Cada compromisso abaixo é um pilar que sustenta nosso atendimento.
+            Cada compromisso abaixo é uma coluna que sustenta nosso atendimento.
           </p>
         </div>
 

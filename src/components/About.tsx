@@ -30,7 +30,7 @@ export default function About() {
         >
           Dra.{' '}
           <span style={{ color: '#b89450', fontStyle: 'italic' }}>Larissa Rocha</span>
-          {' '}— Advogada Previdenciarista
+          {' '}— Advogada
         </h2>
 
         <div className="grid lg:grid-cols-5 gap-14 items-start">
@@ -55,7 +55,7 @@ export default function About() {
               >
                 <Image
                   src="/Larissa_Perfil.jpeg"
-                  alt="Dra. Larissa Rocha — Advogada Previdenciarista"
+                  alt="Dra. Larissa Rocha — Advogada"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover object-top"
@@ -89,7 +89,7 @@ export default function About() {
                       textTransform: 'uppercase',
                     }}
                   >
-                    Advogada Previdenciarista · OAB/SP
+                    Advogada · OAB/SP
                   </p>
                 </div>
               </div>
@@ -101,7 +101,7 @@ export default function About() {
               style={{ background: '#1c2d4a' }}
             >
               {[
-                { label: 'Experiência', value: '15 anos' },
+                { label: 'Experiência', value: '18 anos' },
                 { label: 'Especialidade', value: 'BPC & Aposentadoria' },
                 { label: 'Mestrado', value: 'Mackenzie' },
                 { label: 'Atendimento', value: 'Todo o Brasil' },
@@ -133,8 +133,8 @@ export default function About() {
                 lineHeight: 1.85,
               }}
             >
-              Larissa Rocha é Advogada Previdenciarista há{' '}
-              <strong style={{ fontWeight: 500, color: '#1c2d4a' }}>15 anos</strong>,
+              Larissa Rocha é Advogada há{' '}
+              <strong style={{ fontWeight: 500, color: '#1c2d4a' }}>18 anos</strong>,
               com Mestrado em Direito Político e Econômico, com ênfase em
               Políticas Públicas Sociais —{' '}
               <strong style={{ fontWeight: 500, color: '#1c2d4a' }}>MACKENZIE</strong>.

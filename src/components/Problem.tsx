@@ -121,7 +121,7 @@ export default function Problem() {
               color: 'rgba(255,255,255,0.45)',
             }}
           >
-            — Dra. Larissa Rocha, Advogada Previdenciarista
+            — Dra. Larissa Rocha, Advogada
           </p>
         </div>
       </div>

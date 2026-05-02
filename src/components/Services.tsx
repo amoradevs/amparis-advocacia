@@ -32,7 +32,7 @@ const services = [
     title: 'Recursos e Negativas',
     subtitle: 'Benefício negado? Não desistimos.',
     description:
-      'A primeira negativa não é o fim. Analisamos minuciosamente cada caso e entramos com recurso administrativo ou ação judicial — sem custo antecipado.',
+      'A primeira negativa não é o fim. Analisamos de forma detalhada cada caso e entramos com recurso administrativo ou ação judicial — sem custo antecipado.',
     topics: [
       'Recurso Administrativo no INSS',
       'Ação Judicial Previdenciária',
