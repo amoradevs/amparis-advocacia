@@ -120,8 +120,8 @@ export default function RootLayout({
       className={`${cormorant.variable} ${montserrat.variable}`}
     >
       <head>
-        <link rel="icon" href="/Favicom.jpg" type="image/jpeg" />
-        <link rel="apple-touch-icon" href="/Favicom.jpg" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
