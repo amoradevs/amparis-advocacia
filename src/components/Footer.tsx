@@ -21,11 +21,11 @@ export default function Footer() {
             <Image
               src="/Fundo_escuro.jpg"
               alt="Amparis Advocacia"
-              width={148}
-              height={66}
+              width={138}
+              height={62}
               className="object-contain mb-5"
               loading="lazy"
-              sizes="148px"
+              sizes="138px"
             />
             <p
               className="mb-5"
