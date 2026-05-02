@@ -1,4 +1,4 @@
-import { XCircle, HelpCircle, RefreshCw, FileWarning } from 'lucide-react';
+import { XCircle, HelpCircle, RefreshCw, FileWarning, Clock } from 'lucide-react';
 
 const situations = [
   {
@@ -11,11 +11,15 @@ const situations = [
   },
   {
     Icon: RefreshCw,
-    text: 'Já tentei resolver sozinho e continua sem resposta do INSS',
+    text: 'Já tentei resolver sozinho e continuo sem resposta do INSS',
   },
   {
     Icon: FileWarning,
     text: 'Estou perdido na burocracia e nas exigências do sistema',
+  },
+  {
+    Icon: Clock,
+    text: 'Acho que eu já podia ter me aposentado, mas não tenho certeza',
   },
 ];
 
@@ -61,7 +65,7 @@ export default function Problem() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
           {situations.map(({ Icon, text }) => (
             <div
               key={text}

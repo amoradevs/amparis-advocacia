@@ -63,7 +63,7 @@ export default function Hero() {
           para a sua{' '}
           <span style={{ color: '#b89450', fontStyle: 'italic' }}>Aposentadoria</span>
           {' '}e{' '}
-          <span style={{ color: '#b89450', fontStyle: 'italic' }}>BPC.</span>
+          <span style={{ color: '#b89450', fontStyle: 'italic' }}>BPC</span>
         </h1>
 
         {/* Subtitle — fonte mínima 17px */}
@@ -100,7 +100,6 @@ export default function Hero() {
         >
           {[
             { icon: '✓', text: 'Honorários só quando você receber' },
-            { icon: '✓', text: '15 anos de experiência' },
             { icon: '✓', text: 'Atendimento online para todo Brasil' },
             { icon: '✓', text: 'Consulta inicial gratuita' },
           ].map(({ icon, text }) => (
