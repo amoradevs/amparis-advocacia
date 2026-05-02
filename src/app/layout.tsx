@@ -8,13 +8,15 @@ const cormorant = Cormorant_Garamond({
   style: ["normal", "italic"],
   variable: "--font-cormorant",
   display: "swap",
+  preload: true,
 });
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "600"],
   variable: "--font-montserrat",
   display: "swap",
+  preload: true,
 });
 
 const BASE_URL = "https://www.amparis.com.br";

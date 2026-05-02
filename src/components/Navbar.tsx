@@ -40,6 +40,7 @@ export default function Navbar() {
             height={58}
             className="object-contain"
             priority
+            sizes="130px"
           />
         </a>
 

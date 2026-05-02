@@ -57,8 +57,9 @@ export default function About() {
                   src="/Larissa_Perfil.jpeg"
                   alt="Dra. Larissa Rocha — Advogada Previdenciarista"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover object-top"
-                  priority
+                  loading="lazy"
                 />
                 {/* Overlay gradiente + nome */}
                 <div

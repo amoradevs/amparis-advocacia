@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { MessageCircle } from 'lucide-react';
 
 const WA_URL =
@@ -23,6 +24,8 @@ export default function Footer() {
               width={130}
               height={60}
               className="object-contain mb-5"
+              loading="lazy"
+              sizes="130px"
             />
             <p
               className="mb-5"
@@ -102,12 +105,21 @@ export default function Footer() {
           >
             © {new Date().getFullYear()} Amparis Advocacia · Dra. Larissa Rocha · OAB/SP nº 26.314 · Todos os direitos reservados
           </p>
-          <p
-            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.15)', textAlign: 'center', maxWidth: '360px', lineHeight: 1.5 }}
-          >
-            Este site não é vinculado ao INSS ou qualquer órgão governamental.
-            Serviços exclusivamente jurídicos privados.
-          </p>
+          <div className="flex flex-col items-center gap-2">
+            <p
+              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.15)', textAlign: 'center', maxWidth: '360px', lineHeight: 1.5 }}
+            >
+              Este site não é vinculado ao INSS ou qualquer órgão governamental.
+              Serviços exclusivamente jurídicos privados.
+            </p>
+            <Link
+              href="/privacidade"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.25)', textDecoration: 'none' }}
+              className="hover:text-white transition-colors"
+            >
+              Política de Privacidade
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
