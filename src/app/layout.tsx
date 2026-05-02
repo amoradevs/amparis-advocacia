@@ -40,10 +40,6 @@ export const metadata: Metadata = {
     "recurso INSS",
     "planejamento previdenciário São Paulo",
   ],
-  icons: {
-    icon: '/Favicom.jpg',
-    apple: '/Favicom.jpg',
-  },
   alternates: {
     canonical: BASE_URL,
   },
