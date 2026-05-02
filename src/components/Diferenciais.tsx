@@ -4,7 +4,7 @@ const items = [
   {
     Icon: Trophy,
     title: 'Você só paga quando receber',
-    desc: 'Nossos honorários são de 30% — cobrados apenas no êxito. Se não houver resultado, não há cobrança nenhuma. Sem risco para você.',
+    desc: 'Nossos honorários são de 30% — cobrados apenas com o benefício concedido. Se não houver resultado, não há cobrança nenhuma. Sem risco para você.',
   },
   {
     Icon: UserCheck,

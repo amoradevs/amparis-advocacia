@@ -32,7 +32,7 @@ export default function Footer() {
               style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.4)', fontWeight: 300, lineHeight: 1.7 }}
             >
               Especialistas em BPC e Aposentadoria. Atendimento humanizado,
-              honorários apenas no êxito. Online para todo o Brasil.
+              honorários apenas com o benefício concedido. Online para todo o Brasil.
             </p>
             <a
               href={WA_URL}

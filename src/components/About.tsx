@@ -101,9 +101,8 @@ export default function About() {
               style={{ background: '#1c2d4a' }}
             >
               {[
-                { label: 'Experiência', value: '18 anos' },
                 { label: 'Especialidade', value: 'BPC & Aposentadoria' },
-                { label: 'Mestrado', value: 'Mackenzie' },
+                { label: 'Mestrado', value: 'Universidade Presbiteriana Mackenzie' },
                 { label: 'Atendimento', value: 'Todo o Brasil' },
               ].map((c) => (
                 <div key={c.label}>
@@ -135,9 +134,9 @@ export default function About() {
             >
               Larissa Rocha é Advogada há{' '}
               <strong style={{ fontWeight: 500, color: '#1c2d4a' }}>18 anos</strong>,
-              com Mestrado em Direito Político e Econômico, com ênfase em
+              com Mestrado em Direito Político e Econômico, com foco em
               Políticas Públicas Sociais —{' '}
-              <strong style={{ fontWeight: 500, color: '#1c2d4a' }}>MACKENZIE</strong>.
+              <strong style={{ fontWeight: 500, color: '#1c2d4a' }}>Universidade Presbiteriana Mackenzie</strong>.
             </p>
             <p
               className="mb-10"
