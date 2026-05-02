@@ -1,13 +1,15 @@
+import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Problem from '@/components/Problem';
-import Services from '@/components/Services';
-import Diferenciais from '@/components/Diferenciais';
-import HowItWorks from '@/components/HowItWorks';
-import About from '@/components/About';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
-import WhatsAppFloat from '@/components/WhatsAppFloat';
+
+const Services    = dynamic(() => import('@/components/Services'));
+const Diferenciais = dynamic(() => import('@/components/Diferenciais'));
+const HowItWorks  = dynamic(() => import('@/components/HowItWorks'));
+const About       = dynamic(() => import('@/components/About'));
+const Contact     = dynamic(() => import('@/components/Contact'));
+const Footer      = dynamic(() => import('@/components/Footer'));
+const WhatsAppFloat = dynamic(() => import('@/components/WhatsAppFloat'));
 
 export default function Home() {
   return (
