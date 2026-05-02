@@ -51,7 +51,7 @@ export default function About() {
               {/* Foto — cintura */}
               <div
                 className="relative rounded-2xl overflow-hidden shadow-xl"
-                style={{ aspectRatio: '1/1' }}
+                style={{ aspectRatio: '13/14' }}
               >
                 <Image
                   src="/Larissa_Perfil.jpeg"
