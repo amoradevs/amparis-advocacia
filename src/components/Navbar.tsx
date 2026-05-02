@@ -36,11 +36,11 @@ export default function Navbar() {
           <Image
             src="/Fundo_escuro.jpg"
             alt="Amparis Advocacia"
-            width={165}
-            height={74}
+            width={148}
+            height={66}
             className="object-contain"
             priority
-            sizes="165px"
+            sizes="148px"
           />
         </a>
 
