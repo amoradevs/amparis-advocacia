@@ -2,10 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { MessageCircle, Menu, X } from 'lucide-react';
-
-const WA_URL =
-  'https://wa.me/5511997904557?text=Olá!%20Vim%20pelo%20site%20da%20Amparis%20Advocacia%20e%20gostaria%20de%20uma%20análise%20gratuita%20do%20meu%20caso.';
+import { Menu, X } from 'lucide-react';
 
 const links = [
   { href: '#atuacao', label: 'Áreas de Atuação' },
@@ -58,16 +55,6 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-white/75 hover:text-white transition-colors text-sm font-medium"
-            style={{ fontFamily: 'Montserrat, sans-serif', textDecoration: 'none' }}
-          >
-            <MessageCircle size={14} />
-            WhatsApp
-          </a>
         </nav>
 
         {/* Mobile toggle */}
@@ -86,7 +73,7 @@ export default function Navbar() {
           className="md:hidden border-t px-5 py-6"
           style={{ background: '#13213a', borderColor: 'rgba(255,255,255,0.08)' }}
         >
-          <ul className="flex flex-col gap-5 mb-6">
+          <ul className="flex flex-col gap-5">
             {links.map((l) => (
               <li key={l.href}>
                 <a
@@ -100,16 +87,6 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-wa w-full"
-            onClick={() => setOpen(false)}
-          >
-            <MessageCircle size={18} />
-            Falar pelo WhatsApp
-          </a>
         </div>
       )}
     </header>
