@@ -17,7 +17,7 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-const BASE_URL = "https://amparis-advocacia.vercel.app";
+const BASE_URL = "https://www.amparis.com.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
