@@ -100,7 +100,7 @@ export default function Footer() {
           <p
             style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.8rem', color: 'rgba(255,255,255,0.2)', textAlign: 'center' }}
           >
-            © {new Date().getFullYear()} Amparis Advocacia · Dra. Larissa Rocha · Todos os direitos reservados
+            © {new Date().getFullYear()} Amparis Advocacia · Dra. Larissa Rocha · OAB/SP nº 26.314 · Todos os direitos reservados
           </p>
           <p
             style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.15)', textAlign: 'center', maxWidth: '360px', lineHeight: 1.5 }}
