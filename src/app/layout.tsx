@@ -70,6 +70,9 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true },
   },
+  verification: {
+    google: "GaB28BBke-HfAnUud6fu7wY4jq1RrMjCm13t3damJj4",
+  },
 };
 
 const schemaOrg = {
