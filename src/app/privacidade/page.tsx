@@ -76,8 +76,8 @@ const sections = [
     content: (
       <p>
         A <strong style={{ color: '#1c2d4a', fontWeight: 500 }}>Amparis Advocacia</strong>, sob responsabilidade da
-        Dra. Larissa Rocha (OAB/SP nº 26.314), com sede na Rua Barcelona, 340, B — Sala 05, Jaguaré, São Paulo/SP,
-        CEP 05331-011, é a controladora dos dados pessoais coletados neste site.
+        Dra. Larissa Rocha (OAB/SP nº 26.314), com sede na Rua Irmã Pia, 172, Conj. 13, Jaguaré, São Paulo/SP,
+        CEP 05335-050, é a controladora dos dados pessoais coletados neste site.
       </p>
     ),
   },

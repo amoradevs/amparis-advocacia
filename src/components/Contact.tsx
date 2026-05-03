@@ -81,7 +81,7 @@ export default function Contact() {
             {/* Itens de contato */}
             {[
               { Icon: Mail, label: 'E-mail', value: 'larissarocha@amparis.com.br', href: 'mailto:larissarocha@amparis.com.br' },
-              { Icon: MapPin, label: 'Endereço', value: 'Rua Barcelona, 340, B — Sala 05\nJaguaré, São Paulo — SP\nCEP: 05331-011', href: null },
+              { Icon: MapPin, label: 'Endereço', value: 'Rua Irmã Pia, 172, Conj. 13\nJaguaré, São Paulo — SP\nCEP: 05335-050', href: null },
               { Icon: Clock, label: 'Horário', value: 'Seg — Sex: 8h às 18h\nAtendimento online em todo Brasil', href: null },
             ].map(({ Icon, label, value, href }) => (
               <div key={label} className="flex gap-4 items-start">
@@ -266,18 +266,18 @@ export default function Contact() {
                 className="text-white font-medium"
                 style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9375rem' }}
               >
-                Rua Barcelona, 340, B — Sala 05 · Jaguaré, São Paulo — SP
+                Rua Irmã Pia, 172, Conj. 13 · Jaguaré, São Paulo — SP
               </p>
               <p
                 style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}
               >
-                CEP 05331-011 · Também atendemos 100% online para todo o Brasil
+                CEP 05335-050 · Também atendemos 100% online para todo o Brasil
               </p>
             </div>
           </div>
           <iframe
             title="Localização Amparis Advocacia — Jaguaré, São Paulo"
-            src="https://maps.google.com/maps?q=Rua+Barcelona,+340,+Jaguar%C3%A9,+S%C3%A3o+Paulo,+SP&output=embed"
+            src="https://maps.google.com/maps?q=Rua+Irm%C3%A3+Pia,+172,+Conj.+13,+Jaguar%C3%A9,+S%C3%A3o+Paulo,+SP&output=embed"
             width="100%"
             height="380"
             style={{ border: 0, display: 'block' }}

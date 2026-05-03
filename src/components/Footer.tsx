@@ -89,7 +89,7 @@ export default function Footer() {
             >
               <p>larissarocha@amparis.com.br</p>
               <p>(11) 99790-4557</p>
-              <p>Rua Barcelona, 340, B — Sala 05<br />Jaguaré, São Paulo — SP<br />CEP: 05331-011</p>
+              <p>Rua Irmã Pia, 172, Conj. 13<br />Jaguaré, São Paulo — SP<br />CEP: 05335-050</p>
               <p>Seg — Sex: 8h às 18h</p>
             </div>
           </div>

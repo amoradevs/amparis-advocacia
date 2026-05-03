@@ -91,10 +91,10 @@ const schemaOrg = {
       areaServed: "BR",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Rua Barcelona, 340, B — Sala 05",
+        streetAddress: "Rua Irmã Pia, 172, Conj. 13",
         addressLocality: "São Paulo",
         addressRegion: "SP",
-        postalCode: "05331-011",
+        postalCode: "05335-050",
         addressCountry: "BR",
       },
       openingHours: "Mo-Fr 08:00-18:00",
