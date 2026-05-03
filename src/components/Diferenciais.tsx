@@ -71,8 +71,8 @@ export default function Diferenciais() {
             style={{
               fontFamily: 'Montserrat, sans-serif',
               fontSize: '1rem',
-              color: 'rgba(255,255,255,0.55)',
-              fontWeight: 300,
+              color: 'rgba(255,255,255,0.8)',
+              fontWeight: 400,
               lineHeight: 1.75,
             }}
           >
@@ -112,8 +112,8 @@ export default function Diferenciais() {
                 style={{
                   fontFamily: 'Montserrat, sans-serif',
                   fontSize: '0.9375rem',
-                  color: 'rgba(255,255,255,0.55)',
-                  fontWeight: 300,
+                  color: 'rgba(255,255,255,0.8)',
+                  fontWeight: 400,
                   lineHeight: 1.75,
                 }}
               >

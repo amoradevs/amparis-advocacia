@@ -117,7 +117,7 @@ export default function Services() {
                   fontFamily: 'Montserrat, sans-serif',
                   fontSize: '0.9375rem',
                   color: '#555',
-                  fontWeight: 300,
+                  fontWeight: 400,
                   lineHeight: 1.75,
                 }}
               >
@@ -159,7 +159,7 @@ export default function Services() {
         <div className="text-center mt-12">
           <p
             className="mb-5"
-            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '1rem', color: '#777', fontWeight: 300 }}
+            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '1rem', color: '#555', fontWeight: 400 }}
           >
             Não sabe em qual caso se encaixa? A análise inicial é gratuita e sem compromisso.
           </p>

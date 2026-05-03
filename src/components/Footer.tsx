@@ -29,7 +29,7 @@ export default function Footer() {
             />
             <p
               className="mb-5"
-              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.4)', fontWeight: 300, lineHeight: 1.7 }}
+              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', fontWeight: 400, lineHeight: 1.7 }}
             >
               Especialistas em BPC e Aposentadoria. Atendimento humanizado,
               honorários apenas com o benefício concedido. Online para todo o Brasil.
@@ -65,7 +65,7 @@ export default function Footer() {
                 <li key={item}>
                   <a
                     href="#atuacao"
-                    style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.35)', textDecoration: 'none' }}
+                    style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}
                     className="hover:text-white transition-colors"
                   >
                     {item}
@@ -85,7 +85,7 @@ export default function Footer() {
             </p>
             <div
               className="flex flex-col gap-3"
-              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.65 }}
+              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65 }}
             >
               <p>larissarocha@amparis.com.br</p>
               <p>(11) 99790-4557</p>
@@ -101,20 +101,20 @@ export default function Footer() {
           style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
         >
           <p
-            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.8rem', color: 'rgba(255,255,255,0.2)', textAlign: 'center' }}
+            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', textAlign: 'center' }}
           >
             © {new Date().getFullYear()} Amparis Advocacia · Dra. Larissa Rocha · OAB/SP nº 26.314 · Todos os direitos reservados
           </p>
           <div className="flex flex-col items-center gap-2">
             <p
-              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.15)', textAlign: 'center', maxWidth: '360px', lineHeight: 1.5 }}
+              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.35)', textAlign: 'center', maxWidth: '360px', lineHeight: 1.5 }}
             >
               Este site não é vinculado ao INSS ou qualquer órgão governamental.
               Serviços exclusivamente jurídicos privados.
             </p>
             <Link
               href="/privacidade"
-              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.25)', textDecoration: 'none' }}
+              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}
               className="hover:text-white transition-colors"
             >
               Política de Privacidade

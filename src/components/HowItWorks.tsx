@@ -83,8 +83,8 @@ export default function HowItWorks() {
                 style={{
                   fontFamily: 'Montserrat, sans-serif',
                   fontSize: '0.9375rem',
-                  color: '#666',
-                  fontWeight: 300,
+                  color: '#555',
+                  fontWeight: 400,
                   lineHeight: 1.75,
                 }}
               >
@@ -119,8 +119,8 @@ export default function HowItWorks() {
               style={{
                 fontFamily: 'Montserrat, sans-serif',
                 fontSize: '0.9375rem',
-                color: 'rgba(255,255,255,0.5)',
-                fontWeight: 300,
+                color: 'rgba(255,255,255,0.8)',
+                fontWeight: 400,
               }}
             >
               Se não houver resultado, nada será cobrado. Zero risco financeiro para você.

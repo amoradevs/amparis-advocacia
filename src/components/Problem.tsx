@@ -59,8 +59,8 @@ export default function Problem() {
             style={{
               fontFamily: 'Montserrat, sans-serif',
               fontSize: '1rem',
-              color: '#6b7280',
-              fontWeight: 300,
+              color: '#555',
+              fontWeight: 400,
               lineHeight: 1.7,
             }}
           >
@@ -118,7 +118,7 @@ export default function Problem() {
             style={{
               fontFamily: 'Montserrat, sans-serif',
               fontSize: '0.875rem',
-              color: 'rgba(255,255,255,0.45)',
+              color: 'rgba(255,255,255,0.7)',
             }}
           >
             — Dra. Larissa Rocha, Advogada

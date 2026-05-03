@@ -128,7 +128,7 @@ export default function About() {
                 fontFamily: 'Montserrat, sans-serif',
                 fontSize: '1rem',
                 color: '#444',
-                fontWeight: 300,
+                fontWeight: 400,
                 lineHeight: 1.85,
               }}
             >
@@ -144,7 +144,7 @@ export default function About() {
                 fontFamily: 'Montserrat, sans-serif',
                 fontSize: '1rem',
                 color: '#444',
-                fontWeight: 300,
+                fontWeight: 400,
                 lineHeight: 1.85,
               }}
             >
@@ -186,7 +186,7 @@ export default function About() {
                       {label}
                     </p>
                     <p
-                      style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.875rem', color: '#888', fontWeight: 300, lineHeight: 1.65 }}
+                      style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.875rem', color: '#666', fontWeight: 400, lineHeight: 1.65 }}
                     >
                       {desc}
                     </p>
